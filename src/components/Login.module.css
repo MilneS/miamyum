@@ -3,12 +3,13 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
+  width:100%;
   color: rgb(139, 69, 105);
   position: absolute;
   /* border:1px solid red */
 }
 .card {
-  background-color: rgba(255, 255, 255, 0.678);
+  background-color: rgba(255, 255, 255, 0.911);
   height: 600px;
   width: 500px;
   margin-top: 50px;
@@ -72,12 +73,13 @@ button {
   /* border: 3px solid red; */
   background-color: white;
   border-radius: 1%;
-  width: 140px;
+  width: 100px;
   height: 45px;
   font-size: 19px;
+  color: rgb(139, 69, 105);
   border-color: rgba(139, 69, 105, 0.582);
 }
 .createAccount {
   /* border: 1px solid purple; */
-  width: 100%;
+  width:200px;
 }
