@@ -26,6 +26,12 @@ const Navbar = () => {
   const burgerHandler = () => {
     setShowBurgerLinks(!showBurgerLinks);
   };
+
+  const [showLogin, setShowLogin]=useState(false)
+const loginHandler=()=>{
+  setShowLogin(true)
+}
+
   return (
     <div className={classes.navContainer}>
       <div className={classes.burgerContainer}>
@@ -55,7 +61,7 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div onClick={burgerHandler} className={classes.navLinks}>
-              <NavLink activeClassName={classes.active} to="/Login">
+              <NavLink activeClassName={classes.active} to="/Login" onClick={loginHandler}>
                 Login
               </NavLink>
             </div>
@@ -73,7 +79,7 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className={classes.liContainerRight}>
-        <NavLink activeClassName={classes.active} to="/Login">
+        <NavLink activeClassName={classes.active} to="/Login" onClick={loginHandler}>
           Login
         </NavLink>
       </div>
