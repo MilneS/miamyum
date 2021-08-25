@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Login/> */}
-      <SignUp/>
+      <Login/>
+      {/* <SignUp/> */}
       <Switch>
         <Route path="/" exact>
           <Home />

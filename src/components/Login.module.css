@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   padding: 0px;
-  width:100%;
+  width: 100%;
   color: rgb(139, 69, 105);
   position: absolute;
   /* border:1px solid red */
@@ -18,7 +18,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   /* border:1px solid red */
 }
 .formContainer {
@@ -81,5 +80,48 @@ button {
 }
 .createAccount {
   /* border: 1px solid purple; */
-  width:200px;
+  width: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    height: 400px;
+    width: 350px;
+    /* border:1px solid red */
+  }
+  .title {
+    font-size: 30px;
+    /* border: 1px solid red; */
+    height: 80px;
+  }
+  .errMsg {
+    /* border: 1px solid blue; */
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+  }
+  input {
+    width: 250px;
+    height: 35px;
+    /* border: 1px solid red; */
+  }
+  .formContainer {
+    /* border: 1px solid purple; */
+    width: 264px;
+  }
+  .bottomContainer {
+    /* border: 1px solid rgb(0, 255, 106); */
+    height: 60px;
+    width: 266px;
+  }
+  button {
+    /* border: 3px solid red; */
+    width: 100px;
+    height: 45px;
+    font-size: 15px;
+  }
+  .createAccount {
+    /* border: 1px solid purple; */
+    width: 200px;
+  }
 }
