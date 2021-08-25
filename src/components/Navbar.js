@@ -1,34 +1,66 @@
 import classes from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Navbar = () => {
+  const [showBurgerLinks, setShowBurgerLinks] = useState(false);
+  const burgerRef = useRef(null);
 
-    const [showBurgerLinks, setShowBurgerLinks]=useState(false)
-    const burgerHandler=()=>{
-        setShowBurgerLinks(!showBurgerLinks)
+  // setShowBurgerLinks(false) when click outside nav
+  useEffect(() => {
+    const pageClickEvent = (e) => {
+      if (burgerRef.current !== null && !burgerRef.current.contains(e.target)) {
+        setShowBurgerLinks(!showBurgerLinks);
+      }
+      console.log(e);
+    };
+    if (showBurgerLinks) {
+      window.addEventListener("click", pageClickEvent);
     }
+    return () => {
+      window.removeEventListener("click", pageClickEvent);
+    };
+  }, [showBurgerLinks]);
+
+  // toggle showBurgerLinks onClick
+  const burgerHandler = () => {
+    setShowBurgerLinks(!showBurgerLinks);
+  };
   return (
     <div className={classes.navContainer}>
       <div className={classes.burgerContainer}>
-        <div onClick={burgerHandler} className= {`${classes.burger} ${showBurgerLinks && classes.burgerActive}`}>
+        <div
+          onClick={burgerHandler}
+          className={`${classes.burger} ${
+            showBurgerLinks && classes.burgerActive
+          }`}
+        >
           <div className={classes.burgerBarre} />
           <div className={classes.burgerBarre} />
           <div className={classes.burgerBarre} />
         </div>
-        {showBurgerLinks &&
-        <div className={classes.navLinksContainer}>
-         <div onClick={burgerHandler} className={classes.navLinks}> <NavLink activeClassName={classes.active} to="/home">
-            Home
-          </NavLink></div>
-          <div onClick={burgerHandler} className={classes.navLinks}> <NavLink activeClassName={classes.active} to="/about">
-            About
-          </NavLink></div>
-          <div onClick={burgerHandler} className={classes.navLinks}> <NavLink activeClassName={classes.active} to="/Login">
-            Login
-          </NavLink></div>
-        </div>
-        }
+        {showBurgerLinks && (
+          <nav ref={burgerRef}>
+            <div onClick={burgerHandler} className={classes.navLinks}>
+              <NavLink activeClassName={classes.active} to="/home">
+                Home
+              </NavLink>
+            </div>
+            <div
+              onClick={burgerHandler}
+              className={`${classes.navLinks} ${classes.about}`}
+            >
+              <NavLink activeClassName={classes.active} to="/about">
+                About
+              </NavLink>
+            </div>
+            <div onClick={burgerHandler} className={classes.navLinks}>
+              <NavLink activeClassName={classes.active} to="/Login">
+                Login
+              </NavLink>
+            </div>
+          </nav>
+        )}
       </div>
 
       {/* ----------- */}
