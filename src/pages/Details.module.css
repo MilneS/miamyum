@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-top: 100px; */
 }
 .card {
   background-color: rgba(255, 255, 255, 0.678);
@@ -15,14 +14,14 @@
   align-items: center;
 }
 .img {
-  /* background-color: rgba(255, 255, 255, 0.678); */
+  background-color: rgba(255, 255, 255, 0.678);
   height: 500px;
   width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 10px;
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 }
 .itemsContainer {
   background-color: rgba(255, 255, 255, 0.678);
@@ -33,9 +32,10 @@
   align-items: center;
   margin-left: 10px;
   flex-direction: column;
+  color: rgb(139, 69, 105);
 }
 .title {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -43,11 +43,19 @@
   height: 100px;
   width: 360px;
   padding: 20px;
+  padding-top: 0px;
   font-size: 40px;
 }
-.description {
-  height: 320px;
+.descr {
+  height: 350px;
   width: 360px;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   padding: 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 480px) {
 }
