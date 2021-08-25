@@ -1,6 +1,6 @@
-import classes from "./Login.module.css";
+import classes from "./SignUp.module.css";
 
-const Login = (props) => {
+const SignUp = (props) => {
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -14,7 +14,7 @@ const Login = (props) => {
           <input id="password" type="password" placeholder='Password'/>
           <div className={classes.bottomContainer}>
             <div className={classes.buttondiv}></div>
-            <button>Sign Up</button>
+            <button className={classes.buttons}>Sign Up</button>
           </div>
         </form>
       </div>
@@ -22,4 +22,4 @@ const Login = (props) => {
   );
 };
 
-export default Login;
+export default SignUp;

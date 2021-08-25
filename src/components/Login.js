@@ -13,7 +13,7 @@ const Login = (props) => {
           <input id="password" type="password" placeholder='Password'/>
           <div className={classes.bottomContainer}>
             <div className={classes.createAccount}>or create an account.</div>
-            <button>Login</button>
+            <button className={classes.buttons}>Login</button>
           </div>
         </form>
       </div>

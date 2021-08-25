@@ -6,7 +6,6 @@
   width: 100%;
   color: rgb(139, 69, 105);
   position: absolute;
-  /* border:1px solid red */
 }
 .card {
   background-color: rgba(255, 255, 255, 0.911);
@@ -18,10 +17,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border:1px solid red */
 }
 .formContainer {
-  /* border: 1px solid purple; */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -32,11 +29,9 @@
 }
 .title {
   font-size: 40px;
-  /* border: 1px solid red; */
   height: 100px;
 }
 .errMsg {
-  /* border: 1px solid blue; */
   height: 50px;
   width: 300px;
   font-size: 18px;
@@ -50,7 +45,7 @@ input {
   margin-bottom: 5px;
   font-size: 18px;
   padding-left: 10px;
-  border-color: rgba(139, 69, 105, 0.582);
+  border: 2px solid rgba(139, 69, 105, 0.582);
   border-radius: 1%;
 }
 input:focus {
@@ -64,22 +59,19 @@ input::placeholder {
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: row;
-  /* border: 1px solid rgb(0, 255, 106); */
   height: 60px;
   width: 300px;
 }
-button {
-  /* border: 3px solid red; */
+.buttons {
   background-color: white;
   border-radius: 1%;
   width: 100px;
   height: 45px;
   font-size: 19px;
   color: rgb(139, 69, 105);
-  border-color: rgba(139, 69, 105, 0.582);
+  border: 2px solid rgba(139, 69, 105, 0.582);
 }
 .createAccount {
-  /* border: 1px solid purple; */
   width: 200px;
 }
 
@@ -87,15 +79,12 @@ button {
   .card {
     height: 400px;
     width: 350px;
-    /* border:1px solid red */
   }
   .title {
     font-size: 30px;
-    /* border: 1px solid red; */
     height: 80px;
   }
   .errMsg {
-    /* border: 1px solid blue; */
     height: 40px;
     width: 250px;
     font-size: 15px;
@@ -103,25 +92,34 @@ button {
   input {
     width: 250px;
     height: 35px;
-    /* border: 1px solid red; */
+    font-size: 15px;
+  }
+  input::placeholder{
+    font-size: 15px;
   }
   .formContainer {
-    /* border: 1px solid purple; */
     width: 264px;
   }
   .bottomContainer {
-    /* border: 1px solid rgb(0, 255, 106); */
     height: 60px;
     width: 266px;
   }
-  button {
-    /* border: 3px solid red; */
+  .buttons {
     width: 100px;
     height: 45px;
     font-size: 15px;
   }
   .createAccount {
-    /* border: 1px solid purple; */
     width: 200px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 290px;
+  }
+  .formContainer {
+    width: 265px;
+    border: 1px solid purple;
   }
 }
