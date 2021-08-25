@@ -50,8 +50,8 @@ const Navbar = () => {
               onClick={burgerHandler}
               className={`${classes.navLinks} ${classes.about}`}
             >
-              <NavLink activeClassName={classes.active} to="/about">
-                About
+              <NavLink activeClassName={classes.active} to="/all">
+                All pics
               </NavLink>
             </div>
             <div onClick={burgerHandler} className={classes.navLinks}>
@@ -68,8 +68,8 @@ const Navbar = () => {
         <NavLink activeClassName={classes.active} to="/home">
           Home
         </NavLink>
-        <NavLink activeClassName={classes.active} to="/about">
-          About
+        <NavLink activeClassName={classes.active} to="/all">
+          All pics
         </NavLink>
       </div>
       <div className={classes.liContainerRight}>

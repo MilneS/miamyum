@@ -5,10 +5,10 @@
 }
 .card {
   background-color: rgba(255, 255, 255, 0.678);
-  height: 650px;
+  height: 600px;
   width: 1000px;
   margin-top: 50px;
-  border-radius: 2%;
+  border-radius: 1%;
   display: flex;
   justify-content: center;
   align-items: center;
