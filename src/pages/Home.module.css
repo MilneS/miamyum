@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    font-family: 'Great Vibes';
+    font-size: 65px;
+    color: rgb(139, 69, 105);
+    margin-top: 80px;
+    text-align: center;
+    /* border: 1px solid red; */
+    width:600px;
+    padding:20px;
+    margin-bottom: 0px;
+}
+.card{
+    background-color: rgba(255, 255, 255, 0.678);
+    height: 350px;
+    width: 350px;
+    margin-top: 50px;
+    border-radius: 3%;
+}
