@@ -32,18 +32,18 @@
   
   
   @media only screen and (max-width: 768px) {
-    .container {
-      justify-content: center;
-      align-items: flex-start;
-    }
     .card {
-      height: 550px;
-      width: 400px;
-      margin-top: 50px;
-      border-radius: 2%;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
+        background-color: rgba(255, 255, 255, 0.678);
+        height: 405px;
+        width: 420px;
+        margin-top: 30px;
+        border:1px solid red
+      }
+      .cardsContainer{
+        height: 385px;
+        width:400px;
+        border:1px solid green
+      }
   }
   @media only screen and (max-width: 480px) {
     .card {
