@@ -1,11 +1,15 @@
 import classes from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [showBurgerLinks, setShowBurgerLinks] = useState(false);
-  const burgerRef = useRef(null);
 
+  const loggedin = useSelector((state) => state.loggedin);
+  console.log(loggedin);
+
+  const burgerRef = useRef(null);
   // setShowBurgerLinks(false) when click outside nav
   useEffect(() => {
     const pageClickEvent = (e) => {
@@ -27,13 +31,9 @@ const Navbar = () => {
     setShowBurgerLinks(!showBurgerLinks);
   };
 
-  const [showLogin, setShowLogin]=useState(false)
-const loginHandler=()=>{
-  setShowLogin(true)
-}
-
   return (
     <div className={classes.navContainer}>
+      {/* ------Burger------ */}
       <div className={classes.burgerContainer}>
         <div
           onClick={burgerHandler}
@@ -52,16 +52,20 @@ const loginHandler=()=>{
                 Home
               </NavLink>
             </div>
-            <div
-              onClick={burgerHandler}
-              className={`${classes.navLinks} ${classes.about}`}
-            >
-              <NavLink activeClassName={classes.active} to="/all">
-                All pics
-              </NavLink>
-            </div>
+
+            {loggedin && (
+              <div
+                onClick={burgerHandler}
+                className={`${classes.navLinks} ${classes.about}`}
+              >
+                <NavLink activeClassName={classes.active} to="/all">
+                  All pics
+                </NavLink>
+              </div>
+            )}
+
             <div onClick={burgerHandler} className={classes.navLinks}>
-              <NavLink activeClassName={classes.active} to="/Login" onClick={loginHandler}>
+              <NavLink activeClassName={classes.active} to="/Login">
                 Login
               </NavLink>
             </div>
@@ -69,17 +73,19 @@ const loginHandler=()=>{
         )}
       </div>
 
-      {/* ----------- */}
+      {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
         <NavLink activeClassName={classes.active} to="/home">
           Home
         </NavLink>
+        {loggedin && (
         <NavLink activeClassName={classes.active} to="/all">
           All pics
         </NavLink>
+        )}
       </div>
       <div className={classes.liContainerRight}>
-        <NavLink activeClassName={classes.active} to="/Login" onClick={loginHandler}>
+        <NavLink activeClassName={classes.active} to="/Login">
           Login
         </NavLink>
       </div>
