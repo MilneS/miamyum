@@ -8,13 +8,12 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.loggedin);
-  const showLoginComp = useSelector((state) => state.showLoginComp);
 
-  const loginHandler=()=>{
-    // if(credentials in db)
-    dispatch({type:'login'})
-    // console.log(loggedin);
-  }
+  // const loginHandler=()=>{
+  //   // if(credentials in db)
+  //   dispatch({type:'login'})
+  //   // console.log(loggedin);
+  // }
 
   const showLoginHandler=()=>{
     dispatch({type:'showLogin'})

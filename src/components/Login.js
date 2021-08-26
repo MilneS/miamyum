@@ -1,9 +1,8 @@
 import classes from "./Login.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import {useDispatch } from "react-redux";
 
 
 const Login = (props) => {
-  const showSignupComp = useSelector((state) => state.showSignupComp);
   const dispatch=useDispatch()
 const signupHandler=()=>{
   dispatch({type:'showSignup'})
