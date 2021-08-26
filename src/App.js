@@ -13,6 +13,7 @@ import SignUp from "./components/SignUp";
 function App() {
   const showLogin = useSelector((state) => state.showLoginComp);
   const showSignup = useSelector((state) => state.showSignupComp);
+  const loggedin = useSelector((state) => state.loggedin);
   const dispatch = useDispatch();
   const ref = useRef();
 
@@ -43,10 +44,12 @@ function App() {
           <Home />
         </Route>
         <Route path="/all">
-          <All />
+        {loggedin && <All />}
+          {!loggedin && <Home />}
         </Route>
         <Route path="/details">
-          <Details />
+          {loggedin && <Details />}
+          {!loggedin && <Home />}
         </Route>
         <Route path="*">
           <Home />

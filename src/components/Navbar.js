@@ -5,10 +5,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [showBurgerLinks, setShowBurgerLinks] = useState(false);
-
-  const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.loggedin);
   const showlogin = useSelector((state) => state.showLoginComp);
+  const dispatch = useDispatch();
 
   // const loginHandler=()=>{
   //   // if(credentials in db)
@@ -24,7 +23,7 @@ const Navbar = () => {
     dispatch({ type: "logout" });
     // console.log(loggedin);
   };
- 
+
   const burgerRef = useRef(null);
   // setShowBurgerLinks(false) when click outside nav
   useEffect(() => {
@@ -48,7 +47,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.navContainer}>
-      {/* ------Burger------ */}
+      {/* ------BURGER------ */}
       <div className={classes.burgerContainer}>
         <div
           onClick={burgerHandler}
@@ -63,7 +62,10 @@ const Navbar = () => {
         {showBurgerLinks && (
           <nav ref={burgerRef}>
             <div onClick={burgerHandler} className={classes.navLinks}>
-              <NavLink activeClassName={`${!showlogin && classes.active}`} to="/home">
+              <NavLink
+                activeClassName={`${!showlogin && classes.active}`}
+                to="/home"
+              >
                 Home
               </NavLink>
             </div>
@@ -73,14 +75,22 @@ const Navbar = () => {
                 onClick={burgerHandler}
                 className={`${classes.navLinks} ${classes.about}`}
               >
-                <NavLink activeClassName={`${!showlogin && classes.active}`} to="/all">
+                <NavLink
+                  activeClassName={`${!showlogin && classes.active}`}
+                  to="/all"
+                >
                   All pics
                 </NavLink>
               </div>
             )}
             {!loggedin && (
               <div onClick={burgerHandler} className={classes.navLinks}>
-                <span className={`${showlogin && classes.active}`} onClick={showLoginHandler}>Login</span>
+                <span
+                  className={`${showlogin && classes.active}`}
+                  onClick={showLoginHandler}
+                >
+                  Login
+                </span>
               </div>
             )}
             {loggedin && (
@@ -115,11 +125,7 @@ const Navbar = () => {
             Login
           </span>
         )}
-        {loggedin && (
-          <span  onClick={logoutHandler}>
-            Logout
-          </span>
-        )}
+        {loggedin && <span onClick={logoutHandler}>Logout</span>}
       </div>
     </div>
   );
