@@ -1,11 +1,12 @@
 import classes from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const [showBurgerLinks, setShowBurgerLinks] = useState(false);
 
+  const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.loggedin);
   console.log(loggedin);
 
@@ -63,12 +64,20 @@ const Navbar = () => {
                 </NavLink>
               </div>
             )}
-
-            <div onClick={burgerHandler} className={classes.navLinks}>
-              <NavLink activeClassName={classes.active} to="/Login">
-                Login
-              </NavLink>
-            </div>
+            {!loggedin && (
+              <div onClick={burgerHandler} className={classes.navLinks}>
+                <NavLink activeClassName={classes.active} to="/Login">
+                  Login
+                </NavLink>
+              </div>
+            )}
+            {loggedin && (
+              <div onClick={burgerHandler} className={classes.navLinks}>
+                <NavLink activeClassName={classes.active} to="/Login">
+                  Logout
+                </NavLink>
+              </div>
+            )}
           </nav>
         )}
       </div>
@@ -79,15 +88,18 @@ const Navbar = () => {
           Home
         </NavLink>
         {loggedin && (
-        <NavLink activeClassName={classes.active} to="/all">
-          All pics
-        </NavLink>
+          <NavLink activeClassName={classes.active} to="/all">
+            All pics
+          </NavLink>
         )}
       </div>
       <div className={classes.liContainerRight}>
-        <NavLink activeClassName={classes.active} to="/Login">
+       {!loggedin &&  <NavLink activeClassName={classes.active} to="/Login">
           Login
-        </NavLink>
+        </NavLink>}
+        {loggedin &&  <NavLink activeClassName={classes.active} to="/Login">
+          Logout
+        </NavLink>}
       </div>
     </div>
   );
