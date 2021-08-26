@@ -71,7 +71,7 @@ input::placeholder {
 }
 .createAccount {
   width: 200px;
-  color:rgba(139, 69, 105, 0.582);
+  color:rgb(139, 69, 105);
   cursor: pointer;
 }
 .createAccount:hover{

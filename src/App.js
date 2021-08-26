@@ -19,11 +19,9 @@ function App() {
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       if (showLogin && !ref.current.contains(e.target)) {
-        console.log(`all the conditions are true so we will despatch close`);
         dispatch({ type: "close" });
       }
       if (showSignup && !ref.current.contains(e.target)) {
-        console.log(`all the conditions are true so we will despatch close`);
         dispatch({ type: "close" });
       }
     };

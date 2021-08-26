@@ -8,6 +8,7 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.loggedin);
+  const showlogin = useSelector((state) => state.showLoginComp);
 
   // const loginHandler=()=>{
   //   // if(credentials in db)
@@ -15,15 +16,15 @@ const Navbar = () => {
   //   // console.log(loggedin);
   // }
 
-  const showLoginHandler=()=>{
-    dispatch({type:'showLogin'})
-  }
+  const showLoginHandler = () => {
+    dispatch({ type: "showLogin" });
+  };
 
-  const logoutHandler=()=>{
-    dispatch({type:'logout'})
+  const logoutHandler = () => {
+    dispatch({ type: "logout" });
     // console.log(loggedin);
-  }
-
+  };
+ 
   const burgerRef = useRef(null);
   // setShowBurgerLinks(false) when click outside nav
   useEffect(() => {
@@ -31,7 +32,6 @@ const Navbar = () => {
       if (burgerRef.current !== null && !burgerRef.current.contains(e.target)) {
         setShowBurgerLinks(!showBurgerLinks);
       }
-      console.log(e);
     };
     if (showBurgerLinks) {
       window.addEventListener("click", pageClickEvent);
@@ -63,7 +63,7 @@ const Navbar = () => {
         {showBurgerLinks && (
           <nav ref={burgerRef}>
             <div onClick={burgerHandler} className={classes.navLinks}>
-              <NavLink activeClassName={classes.active} to="/home">
+              <NavLink activeClassName={`${!showlogin && classes.active}`} to="/home">
                 Home
               </NavLink>
             </div>
@@ -73,23 +73,19 @@ const Navbar = () => {
                 onClick={burgerHandler}
                 className={`${classes.navLinks} ${classes.about}`}
               >
-                <NavLink activeClassName={classes.active} to="/all">
+                <NavLink activeClassName={`${!showlogin && classes.active}`} to="/all">
                   All pics
                 </NavLink>
               </div>
             )}
             {!loggedin && (
               <div onClick={burgerHandler} className={classes.navLinks}>
-                <NavLink activeClassName={classes.active} to="/Login" onClick={showLoginHandler}>
-                  Login
-                </NavLink>
+                <span className={`${showlogin && classes.active}`} onClick={showLoginHandler}>Login</span>
               </div>
             )}
             {loggedin && (
               <div onClick={burgerHandler} className={classes.navLinks}>
-                <NavLink activeClassName={classes.active} to="/Login" onClick={logoutHandler}>
-                  Logout
-                </NavLink>
+                <span onClick={logoutHandler}>Logout</span>
               </div>
             )}
           </nav>
@@ -98,22 +94,32 @@ const Navbar = () => {
 
       {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
-        <NavLink activeClassName={classes.active} to="/home">
+        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/home">
           Home
         </NavLink>
         {loggedin && (
-          <NavLink activeClassName={classes.active} to="/all">
+          <NavLink
+            activeClassName={`${!showlogin && classes.active}`}
+            to="/all"
+          >
             All pics
           </NavLink>
         )}
       </div>
       <div className={classes.liContainerRight}>
-       {!loggedin &&  <NavLink activeClassName={classes.active} to="/Login" onClick={showLoginHandler}>
-          Login
-        </NavLink>}
-        {loggedin &&  <NavLink activeClassName={classes.active} to="/Login" onClick={logoutHandler}>
-          Logout
-        </NavLink>}
+        {!loggedin && (
+          <span
+            className={`${showlogin && classes.active}`}
+            onClick={showLoginHandler}
+          >
+            Login
+          </span>
+        )}
+        {loggedin && (
+          <span  onClick={logoutHandler}>
+            Logout
+          </span>
+        )}
       </div>
     </div>
   );
