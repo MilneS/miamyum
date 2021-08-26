@@ -9,7 +9,6 @@ const signupHandler=()=>{
 }
   
   return (
-    <div className={classes.container}>
       <div className={classes.card}>
         <form className={classes.formContainer}>
           <div className={classes.title}>Login</div>
@@ -24,7 +23,6 @@ const signupHandler=()=>{
           </div>
         </form>
       </div>
-    </div>
   );
 };
 

@@ -15,6 +15,7 @@ const loginReducer = (state = { initialState }, action) => {
       return{ ...state, showLoginComp:false, showSignupComp:true}
   }
   if(action.type==='close'){
+    console.log(`close reducer`)
     return{...state, showLoginComp:false, showSignupComp:false}
   }
   return state
