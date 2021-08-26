@@ -1,14 +1,18 @@
 import { createStore } from "redux";
 
-
-const loginReducer = (state = { loggedin: false }, action) => {
+const initialState={loggedin: false, showLoginComp:false, showSignupComp:false}
+const loginReducer = (state = { initialState }, action) => {
   if (action.type === "login") {
-    return { loggedin: (state.loggedin = true) };
+    return {...state, loggedin: true };
   }
   if(action.type==="logout"){
-      return{
-          loggedin: state.loggedin= false
-      }
+      return{...state, loggedin: false}
+  }
+  if(action.type=== 'showLogin'){
+      return{ ...state, showLoginComp:true, showSignupComp:false}
+  }
+  if(action.type=== 'showSignup'){
+      return{ ...state, showLoginComp:false, showSignupComp:true}
   }
   return state
 };

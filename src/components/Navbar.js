@@ -8,7 +8,22 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const loggedin = useSelector((state) => state.loggedin);
-  console.log(loggedin);
+  const showLoginComp = useSelector((state) => state.showLoginComp);
+
+  const loginHandler=()=>{
+    // if(credentials in db)
+    dispatch({type:'login'})
+    // console.log(loggedin);
+  }
+
+  const showLoginHandler=()=>{
+    dispatch({type:'showLogin'})
+  }
+
+  const logoutHandler=()=>{
+    dispatch({type:'logout'})
+    // console.log(loggedin);
+  }
 
   const burgerRef = useRef(null);
   // setShowBurgerLinks(false) when click outside nav
@@ -66,14 +81,14 @@ const Navbar = () => {
             )}
             {!loggedin && (
               <div onClick={burgerHandler} className={classes.navLinks}>
-                <NavLink activeClassName={classes.active} to="/Login">
+                <NavLink activeClassName={classes.active} to="/Login" onClick={showLoginHandler}>
                   Login
                 </NavLink>
               </div>
             )}
             {loggedin && (
               <div onClick={burgerHandler} className={classes.navLinks}>
-                <NavLink activeClassName={classes.active} to="/Login">
+                <NavLink activeClassName={classes.active} to="/Login" onClick={logoutHandler}>
                   Logout
                 </NavLink>
               </div>
@@ -94,10 +109,10 @@ const Navbar = () => {
         )}
       </div>
       <div className={classes.liContainerRight}>
-       {!loggedin &&  <NavLink activeClassName={classes.active} to="/Login">
+       {!loggedin &&  <NavLink activeClassName={classes.active} to="/Login" onClick={showLoginHandler}>
           Login
         </NavLink>}
-        {loggedin &&  <NavLink activeClassName={classes.active} to="/Login">
+        {loggedin &&  <NavLink activeClassName={classes.active} to="/Login" onClick={logoutHandler}>
           Logout
         </NavLink>}
       </div>

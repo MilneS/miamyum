@@ -5,15 +5,18 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import All from "./pages/All";
-import Login from './components/Login'
-import SignUp from './components/SignUp'
+import { useSelector } from "react-redux";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 function App() {
+  const showLogin = useSelector((state) => state.showLoginComp);
+  const showSignup = useSelector((state) => state.showSignupComp);
   return (
     <div className="App">
       <Navbar />
-      {/* <Login/> */}
-      {/* <SignUp/> */}
+      {showLogin && <Login />}
+      {showSignup && <SignUp />}
       <Switch>
         <Route path="/" exact>
           <Home />
