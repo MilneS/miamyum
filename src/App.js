@@ -12,6 +12,7 @@ import SignUp from "./components/SignUp";
 function App() {
   const showLogin = useSelector((state) => state.showLoginComp);
   const showSignup = useSelector((state) => state.showSignupComp);
+
   return (
     <div className="App">
       <Navbar />

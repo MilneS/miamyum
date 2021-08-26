@@ -71,8 +71,16 @@ input::placeholder {
   color: rgb(139, 69, 105);
   border: 2px solid rgba(139, 69, 105, 0.582);
 }
+.buttons:hover{
+  border: 5px solid rgba(139, 69, 105, 0.363);
+}
 .createAccount {
   width: 200px;
+  cursor: pointer;
+}
+.createAccount:hover{
+  font-weight: bold;
+  color: rgba(139, 69, 105, 0.808);
 }
 
 @media only screen and (max-width: 768px) {

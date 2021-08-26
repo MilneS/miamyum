@@ -71,6 +71,9 @@ input::placeholder {
   color: rgb(139, 69, 105);
   border: 2px solid rgba(139, 69, 105, 0.582);
 }
+.buttons:hover{
+  border: 5px solid rgba(139, 69, 105, 0.363);
+}
 .buttondiv {
   width: 100%;
 }
