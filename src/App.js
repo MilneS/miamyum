@@ -1,14 +1,13 @@
 import "./App.css";
-import { Route } from "react-router-dom";
-import { Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import All from "./pages/All";
-import { useSelector, useDispatch } from "react-redux";
-import { useRef, useEffect } from "react";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useRef, useEffect } from "react";
 
 function App() {
   const showLogin = useSelector((state) => state.showLoginComp);
@@ -44,12 +43,12 @@ function App() {
           <Home />
         </Route>
         <Route path="/all">
-        {loggedin && <All />}
-          {!loggedin && <Home />}
+          {loggedin && <All />}
+          {!loggedin && <Redirect to="/" />}
         </Route>
         <Route path="/details">
           {loggedin && <Details />}
-          {!loggedin && <Home />}
+          {!loggedin && <Redirect to="/" />}
         </Route>
         <Route path="*">
           <Home />

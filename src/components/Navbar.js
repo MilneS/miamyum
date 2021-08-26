@@ -104,7 +104,7 @@ const Navbar = () => {
 
       {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
-        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/home">
+        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/">
           Home
         </NavLink>
         {loggedin && (
