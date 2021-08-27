@@ -16,43 +16,46 @@ const Login = (props) => {
     e.preventDefault();
     setEnterredData({ ...enterredData, [e.target.id]: e.target.value });
   };
+
+  const sendData = async (enterredEmail, enterredPassword) => {
+    const response = await fetch(process.env.REACT_APP_LOGIN_API, {
+      method: "POST",
+      body: JSON.stringify({
+        email: enterredEmail,
+        password: enterredPassword,
+        returnSecureToken: true,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    setIsLoading(false);
+    if (response.ok) {
+      dispatch({ type: "login" });
+      dispatch({ type: "close" });
+      setShowMessage(false);
+      return data
+      // console.log(data);
+    } else {
+      setShowMessage(true);
+      let errorMessage = "Authentication failed!";
+      if (data && data.error && data.error.message) {
+        errorMessage = data.error.message;
+      }
+      throw new Error(errorMessage);
+    }
+
+  };
+
   const formHandler = (e) => {
     e.preventDefault();
     const enterredEmail = enterredData.email;
     const enterredPassword = enterredData.password;
-
     setIsLoading(true);
-    const sendData = async () => {
-      const response = await fetch(process.env.REACT_APP_LOGIN_API, {
-        method: "POST",
-        body: JSON.stringify({
-          email: enterredEmail,
-          password: enterredPassword,
-          returnSecureToken: true,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await response.json();
-      setIsLoading(false);
-      if (response.ok) {
-        dispatch({ type: "login" });
-        dispatch({ type: "close" });
-        setShowMessage(false);
+    sendData( enterredEmail,enterredPassword)
+      .then((data) => {
         console.log(data);
-      } else {
-        setShowMessage(true);
-        // let errorMessage = "Authentication failed!";
-        // if (data && data.error && data.error.message) {
-        //   errorMessage = data.error.message;
-        // }
-        // throw new Error(errorMessage);
-      }
-    };
-    sendData()
-      // .then((data) => {
-      //   // console.log(data);
-      // })
-      // .catch((err) => console.log(err.message));
+      })
+      .catch((err) => console.log(err.message));
   };
 
   const signupHandler = () => {

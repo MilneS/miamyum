@@ -18,43 +18,46 @@ const SignUp = (props) => {
     setEnterredData({ ...enterredData, [e.target.id]: e.target.value });
   };
 
+
+  const sendData = async ( enterredUsername,enterredEmail,enterredPassword) => {
+    const response = await fetch(process.env.REACT_APP_SIGNUP_API, {
+      method: "POST",
+      body: JSON.stringify({
+        username: enterredUsername,
+        email: enterredEmail,
+        password: enterredPassword,
+        returnSecureToken: true,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    setIsLoading(false);
+    if (response.ok) {
+      dispatch({ type: "login" });
+      dispatch({ type: "close" });
+      console.log(data);
+    } else {
+      setShowMessage(true);
+      let errorMessage = "Authentication failed!";
+      if (data && data.error && data.error.message) {
+        errorMessage = data.error.message;
+      }
+      throw new Error(errorMessage);
+    }
+  };
+
   const formHandler = async (e) => {
     e.preventDefault();
     const enterredUsername = enterredData.username;
     const enterredEmail = enterredData.email;
     const enterredPassword = enterredData.password;
     setIsLoading(true);
-    const sendData = async () => {
-      const response = await fetch(process.env.REACT_APP_SIGNUP_API, {
-        method: "POST",
-        body: JSON.stringify({
-          username: enterredUsername,
-          email: enterredEmail,
-          password: enterredPassword,
-          returnSecureToken: true,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
-      const data = await response.json();
-      setIsLoading(false);
-      if (response.ok) {
-        dispatch({ type: "login" });
-        dispatch({ type: "close" });
+    
+    sendData(enterredUsername, enterredEmail, enterredPassword)
+      .then((data) => {
         console.log(data);
-      } else {
-        setShowMessage(true);
-        // let errorMessage = "Authentication failed!";
-        // if (data && data.error && data.error.message) {
-        //   errorMessage = data.error.message;
-        // }
-        // throw new Error(errorMessage);
-      }
-    };
-    sendData()
-      // .then((data) => {
-      //   // console.log(data);
-      // })
-      // .catch((err) => console.log(err.message));
+      })
+      .catch((err) => console.log(err.message));
   };
 
   return (
