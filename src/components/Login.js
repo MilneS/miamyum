@@ -30,10 +30,10 @@ const Login = (props) => {
     const data = await response.json();
     setIsLoading(false);
     if (response.ok) {
-      dispatch({ type: "login" });
-      dispatch({ type: "close" });
       setShowMessage(false);
-      return data
+      !!data.idToken && dispatch({ type: "login" });
+      dispatch({ type: "close" });
+      return data;
       // console.log(data);
     } else {
       setShowMessage(true);
@@ -43,7 +43,6 @@ const Login = (props) => {
       }
       throw new Error(errorMessage);
     }
-
   };
 
   const formHandler = (e) => {
@@ -51,9 +50,9 @@ const Login = (props) => {
     const enterredEmail = enterredData.email;
     const enterredPassword = enterredData.password;
     setIsLoading(true);
-    sendData( enterredEmail,enterredPassword)
+    sendData(enterredEmail, enterredPassword)
       .then((data) => {
-        console.log(data);
+        dispatch({type:"idToken", token:data.idToken});
       })
       .catch((err) => console.log(err.message));
   };
@@ -70,7 +69,9 @@ const Login = (props) => {
           <div className={classes.errMsg}>Incorrect email or password.</div>
         )}
         {!showMessage && (
-          <div className={classes.cred}>Email: test@test.com <br/> Password: testest</div>
+          <div className={classes.cred}>
+            Email: test@test.com <br /> Password: testest
+          </div>
         )}
 
         <label htmlFor="email" />

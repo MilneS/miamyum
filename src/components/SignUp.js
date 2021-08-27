@@ -23,7 +23,7 @@ const SignUp = (props) => {
     const response = await fetch(process.env.REACT_APP_SIGNUP_API, {
       method: "POST",
       body: JSON.stringify({
-        username: enterredUsername,
+        displayName: enterredUsername,
         email: enterredEmail,
         password: enterredPassword,
         returnSecureToken: true,
@@ -33,9 +33,9 @@ const SignUp = (props) => {
     const data = await response.json();
     setIsLoading(false);
     if (response.ok) {
-      dispatch({ type: "login" });
+      !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
-      console.log(data);
+      return data;
     } else {
       setShowMessage(true);
       let errorMessage = "Authentication failed!";
@@ -55,7 +55,7 @@ const SignUp = (props) => {
     
     sendData(enterredUsername, enterredEmail, enterredPassword)
       .then((data) => {
-        console.log(data);
+        dispatch({type:"idToken", token:data.idToken});
       })
       .catch((err) => console.log(err.message));
   };
