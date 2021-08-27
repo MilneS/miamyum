@@ -1,5 +1,5 @@
 import classes from "./SignUp.module.css";
-import { useState} from "react";
+import { useState } from "react";
 
 const SignUp = (props) => {
   const data = {
@@ -8,11 +8,13 @@ const SignUp = (props) => {
     password: "",
   };
   const [enterredData, setEnterredData] = useState(data);
+  const [isLoading, setIsLoading] = useState(false);
 
   const enterredDataHandler = (e) => {
     e.preventDefault();
     setEnterredData({ ...enterredData, [e.target.id]: e.target.value });
   };
+
   const formHandler = (e) => {
     e.preventDefault();
 
@@ -20,6 +22,7 @@ const SignUp = (props) => {
     const enterredEmail = enterredData.email;
     const enterredPassword = enterredData.password;
 
+    setIsLoading(true);
     fetch(process.env.REACT_APP_SIGNUP_API, {
       method: "POST",
       body: JSON.stringify({
@@ -30,11 +33,13 @@ const SignUp = (props) => {
       }),
       headers: { "Content-Type": "application/json" },
     }).then((res) => {
+      setIsLoading(false);
       if (res.ok) {
         //
       } else {
         return res.json().then((data) => {
-          console.log(data);
+          let errorMessage = "Authentication failed!";
+          alert(errorMessage);
         });
       }
     });
@@ -66,7 +71,8 @@ const SignUp = (props) => {
         />
         <div className={classes.bottomContainer}>
           <div className={classes.buttondiv}></div>
-          <button className={classes.buttons}>Sign Up</button>
+          {!isLoading && <button className={classes.buttons}>Sign Up</button>}
+          {isLoading && <p>Loading...</p>}
         </div>
       </form>
     </div>
