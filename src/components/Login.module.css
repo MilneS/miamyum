@@ -26,6 +26,13 @@
   font-size: 40px;
   height: 100px;
 }
+.cred{
+  height: 50px;
+  width: 300px;
+  font-size: 18px;
+  color: rgb(2, 175, 2);
+  padding: 0px;
+}
 .errMsg {
   height: 50px;
   width: 300px;
@@ -88,6 +95,10 @@ input::placeholder {
     font-size: 30px;
     height: 80px;
   }
+  .cred{
+    height: 40px;
+    width: 250px;
+    font-size: 15px;}
   .errMsg {
     height: 40px;
     width: 250px;
@@ -124,6 +135,5 @@ input::placeholder {
   }
   .formContainer {
     width: 265px;
-    border: 1px solid purple;
   }
 }

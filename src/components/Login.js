@@ -22,27 +22,39 @@ const Login = (props) => {
     const enterredPassword = enterredData.password;
 
     setIsLoading(true);
-    fetch(process.env.REACT_APP_LOGIN_API, {
-      method: "POST",
-      body: JSON.stringify({
-        email: enterredEmail,
-        password: enterredPassword,
-        returnSecureToken: true,
-      }),
-      headers: { "Content-Type": "application/json" },
-    }).then((res) => {
+    const sendData = async () => {
+      const response = await fetch(process.env.REACT_APP_LOGIN_API, {
+        method: "POST",
+        body: JSON.stringify({
+          email: enterredEmail,
+          password: enterredPassword,
+          returnSecureToken: true,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
       setIsLoading(false);
-      if (res.ok) {
+      if (response.ok) {
         dispatch({ type: "login" });
-        dispatch({type: 'close'})
+        dispatch({ type: "close" });
         setShowMessage(false);
+        console.log(data);
       } else {
-        return res.json().then((data) => {
-          setShowMessage(true);
-        });
+        setShowMessage(true);
+        // let errorMessage = "Authentication failed!";
+        // if (data && data.error && data.error.message) {
+        //   errorMessage = data.error.message;
+        // }
+        // throw new Error(errorMessage);
       }
-    });
+    };
+    sendData()
+      // .then((data) => {
+      //   // console.log(data);
+      // })
+      // .catch((err) => console.log(err.message));
   };
+
   const signupHandler = () => {
     dispatch({ type: "showSignup" });
   };
@@ -54,6 +66,10 @@ const Login = (props) => {
         {showMessage && (
           <div className={classes.errMsg}>Incorrect email or password.</div>
         )}
+        {!showMessage && (
+          <div className={classes.cred}>Email: test@test.com <br/> Password: testest</div>
+        )}
+
         <label htmlFor="email" />
         <input
           id="email"

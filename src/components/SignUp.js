@@ -11,6 +11,7 @@ const SignUp = (props) => {
   };
   const [enterredData, setEnterredData] = useState(data);
   const [isLoading, setIsLoading] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const enterredDataHandler = (e) => {
     e.preventDefault();
@@ -39,22 +40,30 @@ const SignUp = (props) => {
       if (response.ok) {
         dispatch({ type: "login" });
         dispatch({ type: "close" });
+        console.log(data);
       } else {
-        let errorMessage = "Authentication failed!";
-        if (data && data.error && data.error.message) {
-          errorMessage = data.error.message;
-        }
-        throw new Error(errorMessage);
+        setShowMessage(true);
+        // let errorMessage = "Authentication failed!";
+        // if (data && data.error && data.error.message) {
+        //   errorMessage = data.error.message;
+        // }
+        // throw new Error(errorMessage);
       }
     };
     sendData()
-      
+      // .then((data) => {
+      //   // console.log(data);
+      // })
+      // .catch((err) => console.log(err.message));
   };
 
   return (
     <div className={classes.card}>
       <form onSubmit={formHandler} className={classes.formContainer}>
         <div className={classes.title}>Sign Up</div>
+        {showMessage && (
+          <div className={classes.errMsg}>Use a valid email, or login.</div>
+        )}
         <label htmlFor="username" />
         <input
           id="username"
