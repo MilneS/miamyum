@@ -51,7 +51,7 @@ function App() {
           {!loggedin && <Redirect to="/" />}
         </Route>
         <Route path="*">
-          <Home />
+        <Redirect to="/"/>
         </Route>
       </Switch>
     </div>
