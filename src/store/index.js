@@ -8,7 +8,6 @@ const loginReducer = (state = initialState , action) => {
   if (action.type === "getToken") {
     return {...state, idToken: action.token};
   }
-
   if(action.type==="logout"){
       return{...state, loggedin: false}
   }

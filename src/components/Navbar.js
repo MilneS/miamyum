@@ -7,6 +7,7 @@ const Navbar = () => {
   const [showBurgerLinks, setShowBurgerLinks] = useState(false);
   const loggedin = useSelector((state) => state.loggedin);
   const showlogin = useSelector((state) => state.showLoginComp);
+  const token= useSelector((state) => state.showLoginComp);
   const dispatch = useDispatch();
 
 
@@ -15,8 +16,8 @@ const Navbar = () => {
   };
 
   const logoutHandler = () => {
-    dispatch({ type: "logout" });
-    // console.log(loggedin);
+    dispatch({ type: "getToken", token: null });
+    !token && dispatch({ type: "logout" });
   };
 
   const burgerRef = useRef(null);
