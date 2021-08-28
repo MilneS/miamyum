@@ -1,8 +1,11 @@
 import classes from "./SignUp.module.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 
 const SignUp = (props) => {
+  const history=useHistory()
   const dispatch = useDispatch();
   const data = {
     username: "",
@@ -56,6 +59,7 @@ const SignUp = (props) => {
     sendData(enterredUsername, enterredEmail, enterredPassword)
       .then((data) => {
         dispatch({type:"idToken", token:data.idToken});
+        history.replace('/')
       })
       .catch((err) => console.log(err.message));
   };

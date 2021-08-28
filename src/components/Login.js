@@ -1,8 +1,10 @@
 import classes from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
+  const history=useHistory()
   const dispatch = useDispatch();
   const data = {
     email: "",
@@ -34,7 +36,6 @@ const Login = (props) => {
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
       return data;
-      // console.log(data);
     } else {
       setShowMessage(true);
       let errorMessage = "Authentication failed!";
@@ -53,6 +54,7 @@ const Login = (props) => {
     sendData(enterredEmail, enterredPassword)
       .then((data) => {
         dispatch({type:"idToken", token:data.idToken});
+        history.replace('/')
       })
       .catch((err) => console.log(err.message));
   };
