@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
-  const history=useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const data = {
     email: "",
@@ -34,6 +34,7 @@ const Login = (props) => {
     if (response.ok) {
       setShowMessage(false);
       !!data.idToken && dispatch({ type: "login" });
+      console.log('hi');
       dispatch({ type: "close" });
       return data;
     } else {
@@ -53,8 +54,9 @@ const Login = (props) => {
     setIsLoading(true);
     sendData(enterredEmail, enterredPassword)
       .then((data) => {
-        dispatch({type:"idToken", token:data.idToken});
-        history.replace('/')
+        dispatch({ type: "idToken", token: data.idToken });
+        localStorage.setItem("token", data.idToken);
+        history.replace("/");
       })
       .catch((err) => console.log(err.message));
   };
@@ -72,7 +74,8 @@ const Login = (props) => {
         )}
         {!showMessage && (
           <div className={classes.cred}>
-            Email: test@test.com <br /> Password: testest
+            test@test.com <br />
+            testest
           </div>
         )}
 

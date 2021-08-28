@@ -44,7 +44,7 @@ function App() {
         </Route>
         <Route path="/all">
           {loggedin && <All />}
-          {!loggedin && <Redirect to="/" />}
+          {!loggedin && <Redirect to="/"/>}
         </Route>
         <Route path="/details">
           {loggedin && <Details />}

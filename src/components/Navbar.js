@@ -18,6 +18,7 @@ const Navbar = () => {
   const logoutHandler = () => {
     dispatch({ type: "getToken", token: null });
     !token && dispatch({ type: "logout" });
+    localStorage.removeItem('token')
   };
 
   const burgerRef = useRef(null);
