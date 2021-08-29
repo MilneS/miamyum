@@ -8,7 +8,7 @@ const AllCard=(props)=>{
         <div className={classes.container}>
         <div className={classes.card}>
           <img className={classes.allimg} src={link} alt=''/>
-          <div className={classes.after}></div>
+          <div className={classes.after}/>
         </div>
       </div>
     )
