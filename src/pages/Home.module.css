@@ -18,10 +18,20 @@
 }
 .card {
   background-color: rgba(255, 255, 255, 0.678);
-  height: 350px;
-  width: 350px;
+  height: 250px;
+  width: 250px;
   margin-top: 50px;
   border-radius: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:8px solid rgba(255, 255, 255, 0.589);
+}
+.picstyle {
+  height: 250px;
+  width: 250px;
+  border-radius: 2%;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 768px) {
@@ -31,9 +41,13 @@
     width: 400px;
   }
   .card {
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     margin-top: 20px;
+  }
+  .picstyle {
+    height: 150px;
+    width: 150px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -41,10 +55,5 @@
     font-size: 30px;
     margin-top: 30px;
     width: 250px;
-  }
-  .card {
-    height: 250px;
-    width: 250px;
-    margin-top: 30px;
   }
 }

@@ -65,6 +65,7 @@
     margin-left: 20px;
     position: absolute;
     top: 15px;
+    z-index: 1;
   }
   .burger {
     display: flex;
@@ -75,6 +76,7 @@
     height: 60px;
     border: 1px solid white;
     border-radius: 5%;
+    
   }
   .burgerActive {
     border: none;
@@ -103,6 +105,7 @@
     height: 50px;
     width: 70px;
     padding: 20px;
+    cursor: pointer;
   }
   .about {
     border-top: 1px solid white;

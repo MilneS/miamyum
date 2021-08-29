@@ -59,6 +59,7 @@ const SignUp = (props) => {
     sendData(enterredUsername, enterredEmail, enterredPassword)
       .then((data) => {
         dispatch({type:"idToken", token:data.idToken});
+        localStorage.setItem("token", data.idToken);
         history.replace('/')
       })
       .catch((err) => console.log(err.message));

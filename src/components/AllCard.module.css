@@ -1,20 +1,26 @@
 .card{
     height:200px;
-    width:205px;
+    width:200px;
     border:8px solid rgba(255, 255, 255, 0.589);
     margin:8px;
     border-radius: 3%;
+}
+.allimg{
+  height:200px;
+  width:200px;
 }
   
   @media only screen and (max-width: 768px) {
     .card{
         height:100px;
-        width:105px;
+        width:100px;
         border:6px solid rgba(255, 255, 255, 0.589);
         margin:8px;
         border-radius: 3%;
     }
-  }
-  @media only screen and (max-width: 480px) {
+    .allimg{
+      height:100px;
+      width:100px;
+    }
   }
   

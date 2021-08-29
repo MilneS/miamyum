@@ -6,18 +6,7 @@ const All = () => {
     <div className={classes.container}>
       <div className={classes.card}>
         <div className={classes.cardsContainer}>
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
-          <AllCard />
+
         </div>
       </div>
     </div>

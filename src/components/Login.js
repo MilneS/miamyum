@@ -34,7 +34,6 @@ const Login = (props) => {
     if (response.ok) {
       setShowMessage(false);
       !!data.idToken && dispatch({ type: "login" });
-      console.log('hi');
       dispatch({ type: "close" });
       return data;
     } else {

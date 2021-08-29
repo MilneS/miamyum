@@ -1,5 +1,6 @@
 import classes from "./Home.module.css";
 
+
 const Home = () => {
   return (
     <div className={classes.container}>
@@ -8,7 +9,8 @@ const Home = () => {
         photo gallery
       </p>
       <div className={classes.card}>
-        <div className={classes.lastPost}>last post</div>
+        <div className={classes.lastPost}>
+        </div>
       </div>
     </div>
   );
