@@ -1,20 +1,22 @@
 import classes from "./All.module.css";
 import AllCard from "../components/AllCard";
 import foodData from "../components/foodData";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const All = () => {
+  const dispatch=useDispatch();
   return (
     <div className={classes.container}>
       <div className={classes.card}>
         <div className={classes.cardsContainer}>
           {foodData.map((item, index) => {
             return (
+              <Link to={`/details/${item.id}`} key={index}>
               <AllCard
-                key={index}
-                title={item.title}
                 link={item.img}
-                description={item.description}
-              />
+                item={item}
+              /></Link>
             );
           })}
         </div>

@@ -46,7 +46,7 @@ function App() {
           {loggedin && <All />}
           {!loggedin && <Redirect to="/"/>}
         </Route>
-        <Route path="/details">
+        <Route path="/details/:itemId">
           {loggedin && <Details />}
           {!loggedin && <Redirect to="/" />}
         </Route>
