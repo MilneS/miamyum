@@ -1,11 +1,9 @@
 import classes from "./All.module.css";
 import AllCard from "../components/AllCard";
 import foodData from "../components/foodData";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 const All = () => {
-  const dispatch=useDispatch();
   return (
     <div className={classes.container}>
       <div className={classes.card}>
