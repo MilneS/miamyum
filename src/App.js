@@ -39,19 +39,19 @@ function App() {
         {showSignup && <SignUp />}
       </div>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/miamyum" exact>
           <Home />
         </Route>
-        <Route path="/all">
+        <Route path="/miamyum/all">
           {loggedin && <All />}
           {!loggedin && <Redirect to="/"/>}
         </Route>
-        <Route path="/details/:itemId">
+        <Route path="/miamyum/details/:itemId">
           {loggedin && <Details />}
           {!loggedin && <Redirect to="/" />}
         </Route>
         <Route path="*">
-        <Redirect to="/"/>
+        <Redirect to="/miamyum"/>
         </Route>
       </Switch>
     </div>
