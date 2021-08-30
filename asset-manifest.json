@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/miamyum/static/css/main.c6398f02.chunk.css",
-    "main.js": "/miamyum/static/js/main.3276c406.chunk.js",
-    "main.js.map": "/miamyum/static/js/main.3276c406.chunk.js.map",
+    "main.js": "/miamyum/static/js/main.01bff777.chunk.js",
+    "main.js.map": "/miamyum/static/js/main.01bff777.chunk.js.map",
     "runtime-main.js": "/miamyum/static/js/runtime-main.022f4eb7.js",
     "runtime-main.js.map": "/miamyum/static/js/runtime-main.022f4eb7.js.map",
     "static/js/2.4bdbd653.chunk.js": "/miamyum/static/js/2.4bdbd653.chunk.js",
@@ -15,7 +15,7 @@
     "static/media/App.css": "/miamyum/static/media/1.a8e73c8e.jpeg",
     "static/media/a.b6330cc6.jpg": "/miamyum/static/media/a.b6330cc6.jpg",
     "static/media/b.bbf1d9a5.jpg": "/miamyum/static/media/b.bbf1d9a5.jpg",
-    "static/media/c.44f2fec4.jpg": "/miamyum/static/media/c.44f2fec4.jpg",
+    "static/media/c.9d56023e.jpg": "/miamyum/static/media/c.9d56023e.jpg",
     "static/media/d.130ef2b6.jpg": "/miamyum/static/media/d.130ef2b6.jpg",
     "static/media/e.a85b6f0f.jpg": "/miamyum/static/media/e.a85b6f0f.jpg",
     "static/media/f.7932b487.jpg": "/miamyum/static/media/f.7932b487.jpg",
@@ -41,6 +41,6 @@
     "static/js/runtime-main.022f4eb7.js",
     "static/js/2.4bdbd653.chunk.js",
     "static/css/main.c6398f02.chunk.css",
-    "static/js/main.3276c406.chunk.js"
+    "static/js/main.01bff777.chunk.js"
   ]
 }
