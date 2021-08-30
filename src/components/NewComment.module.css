@@ -1,0 +1,9 @@
+.commentContainer{
+    border: 1px solid red;
+    height:fit-content;
+    width: 350px;
+    margin-top: 15px;
+    padding: 5px;
+    line-height: 20px;
+    font-size: 17px;
+}

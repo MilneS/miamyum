@@ -35,47 +35,46 @@ const foodData = [
     title: "Eclair glacé vanille",
     img: B,
     description:
-      "An éclair is an oblong pastry made with choux dough filled with a cream and topped with flavored icing.",
+      "An éclair is an oblong pastry made with choux dough filled with cream and topped with flavored icing.",
   },
   {
     id: "c",
     title: "Cupcake amandes et crème de cheesecake",
     img: C,
-    description:
-      "almond cupcake topped with cheesecake frosting and chocolate m&m's.",
+    description: "Almond cupcake with cheesecake frosting and chocolate m&m's.",
   },
   {
     id: "d",
     title: "Bûche framboise-pistache",
     img: D,
     description:
-      "raspberries and pistachio log topped with raspberries and pistachio macarons.",
+      "Raspberries and pistachio log topped with raspberry and pistachio macarons.",
   },
   {
     id: "e",
     title: "Tartelette aux pommes",
     img: E,
-    description: "French apple tartlet (meaning, no cinnamon!).",
+    description: "French apple tartlet (no cinnamon!).",
   },
   {
     id: "f",
     title: "Cookies au Daim",
     img: F,
-    description: "Cokkies made with Daim chocolate candy.",
+    description: "Cookies made with Daim chocolate candy.",
   },
   {
     id: "g",
     title: "Paris-Brest",
     img: G,
     description:
-      "The wheel shaped pastry, was created to commemorate the Paris–Brest–Paris bicycle race.",
+      "The wheel shaped pastry, was created to commemorate the Paris–Brest–Paris bicycle race. It is made with choux dough, praliné cream and topped with almond and sugar",
   },
   {
     id: "h",
     title: "Mille-feuille",
     img: H,
     description:
-      "A mille-feuille is made up of three layers of puff pastry and glazed with icing and chocolate stripes.",
+      "A mille-feuille is made up of layered of puff pastry and cream, and glazed with icing and chocolate stripes.",
   },
   {
     id: "i",
@@ -100,7 +99,7 @@ const foodData = [
     id: "m",
     title: "Eclair craquelin vanille",
     img: M,
-    description: "Vanilla eclair topped with craquelin.",
+    description: "Vanilla éclair topped with craquelin.",
   },
   {
     id: "n",
@@ -113,15 +112,15 @@ const foodData = [
     title: "Praliné",
     img: O,
     description:
-      "A spread made with caramelized roasted almonds and hazelnuts.",
+      "Praliné is a spread made with caramelized roasted almonds and hazelnuts.",
   },
   {
     id: "p",
     title: "Pain perdu roulé au Nutella",
     img: P,
-    description: "Rolled Nutella french toasts.",
+    description: "Nutella french toast rolls.",
   },
-  { id: "q", title: "Donuts", img: Q, description: "Well, donuts." },
+  { id: "q", title: "Donuts", img: Q, description: "Donuts." },
   {
     id: "r",
     title: "Gateau à l'ananas",
@@ -138,7 +137,7 @@ const foodData = [
     id: "t",
     title: "Gateau glacé pistache-franboise",
     img: T,
-    description: "Iced raspberry and pistachio cake.",
+    description: "Raspberry and pistachio cake.",
   },
   {
     id: "u",

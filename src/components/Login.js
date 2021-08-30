@@ -35,6 +35,7 @@ const Login = (props) => {
       setShowMessage(false);
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
+      console.log(data)
       return data;
     } else {
       setShowMessage(true);
