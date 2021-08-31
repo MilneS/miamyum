@@ -22,6 +22,7 @@ const Details = () => {
     });
     if (response.ok) {
       const data = await response.json();
+      // console.log(data);
       setAllComments(data);
     }
   };
