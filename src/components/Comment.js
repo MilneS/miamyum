@@ -1,4 +1,5 @@
 import classes from "./Comment.module.css";
+import { useState } from "react";
 
 const Comment = (props) => {
   const allComments = props.allComments;
@@ -14,6 +15,7 @@ const Comment = (props) => {
     let currData = filteredData[i];
     commArr.push(currData);
   }
+
   return (
     <div className={classes.commentContainer}>
       {commArr.map((item, index) => {
@@ -24,6 +26,7 @@ const Comment = (props) => {
           </div>
         );
       })}
+      {commArr.length < 1 && <div>No comments.</div>}
     </div>
   );
 };
