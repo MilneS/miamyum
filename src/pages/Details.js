@@ -3,28 +3,39 @@ import { useParams } from "react-router";
 import foodData from "../components/foodData";
 import Comment from "../components/Comment";
 import { useState } from "react";
-import NewComment from '../components/NewComment'
+import NewComment from "../components/NewComment";
+// import { useEffect } from "react";
 
 const Details = () => {
   const [showComments, setShowComments] = useState(false);
   const [newComments, setNewComments] = useState(false);
+  const [allComments, setAllComments] = useState();
   const params = useParams();
   const item = foodData.find((item) => item.id === params.itemId);
 
-  const showCommentsHandler = (e) => {
+  const showCommentsHandler = async (e) => {
     e.preventDefault();
     setShowComments(!showComments);
-    setNewComments(false)
+    setNewComments(false);
+    const response = await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
+      method: "GET",
+    });
+    if (response.ok) {
+      const data = await response.json();
+      setAllComments(data);
+    }
   };
+
   const addCommentsHandler = (e) => {
     e.preventDefault();
-    setNewComments(true)
-    setShowComments(false)
+    setNewComments(true);
+    setShowComments(false);
   };
 
+  // useEffect(() => {
+  //   console.log(allComments);
+  // }, [allComments]);
 
-
-  
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -44,20 +55,24 @@ const Details = () => {
                   {!showComments && "Show comments"} {showComments && "Hide"}
                 </button>
                 {showComments && (
-                  <button className={classes.addButton} onClick={addCommentsHandler}>Add</button>
+                  <button
+                    className={classes.addButton}
+                    onClick={addCommentsHandler}
+                  >
+                    Add
+                  </button>
                 )}
               </div>
               {showComments && !newComments && (
                 <div>
-                  <Comment />
-                </div>
-              )}   
-              {!showComments && newComments && (
-                <div>
-                  <NewComment itemId={item.id}/>
+                  <Comment allComments={allComments} itemId={item.id} />
                 </div>
               )}
-
+              {!showComments && newComments && (
+                <div>
+                  <NewComment itemId={item.id} />
+                </div>
+              )}
             </div>
           </div>
         </div>
