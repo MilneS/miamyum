@@ -20,6 +20,7 @@ const Navbar = () => {
     dispatch({ type: "getToken", token: null });
     !token && dispatch({ type: "logout" });
     localStorage.removeItem('token')
+    localStorage.removeItem('userName')
     dispatch({ type: "getUserId", userId: null });
     localStorage.removeItem('userId')
   };

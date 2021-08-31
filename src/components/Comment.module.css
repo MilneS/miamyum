@@ -8,11 +8,21 @@
   font-size: 17px;
   overflow: scroll;
 }
+.commItem {
+  margin:5px;
+  padding: 10px;
+  background-color: pink;
+}
+.user {
+  margin-top: 0px;
+  font-weight: bold;
+}
 .comment {
   /* border: 1px solid green; */
-  height: 80px;
+  height: fit-content;
+  max-height: 80px;
   margin: 0px;
-  margin-top: 18px;
-  padding: 3px;
+  margin-top: 0px;
+  margin-top: 5px;
   overflow: scroll;
 }

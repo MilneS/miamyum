@@ -11,6 +11,7 @@ const NewComment = (props) => {
   const [enterredData, setEnterredData] = useState(data);
   const itemId = props.itemId;
   const comment = enterredData.comment;
+  const userName=localStorage.getItem("userName")
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -20,7 +21,8 @@ const NewComment = (props) => {
         method: "POST",
         body: JSON.stringify({
           itemId: itemId,
-          user: userId,
+          userName:userName,
+          userId: userId,
           comment: comment,
         }),
       }

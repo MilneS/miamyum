@@ -39,9 +39,10 @@ const SignUp = (props) => {
     setIsLoading(false);
     if (response.ok) {
       dispatch({ type: "getUserId", localId: data.localId });
+      localStorage.setItem("userName", data.displayName);
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
-      console.log(data);
+      // console.log(data);
       return data;
     } else {
       setShowMessage(true);

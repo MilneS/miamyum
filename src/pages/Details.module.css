@@ -63,13 +63,7 @@
   font-size: 20px;
   line-height: 30px;
 }
-.commentsContainer > p {
-  margin: 0px;
-  margin-top: 10px;
-  padding: 0px;
-  border: 1px solid green;
-  font-weight: 500;
-}
+
 .buttonsContainer {
   display: flex;
   flex-direction: row;

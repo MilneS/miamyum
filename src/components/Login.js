@@ -36,6 +36,7 @@ const Login = (props) => {
       setShowMessage(false);
       dispatch({ type: "getUserId", localId: data.localId });
       localStorage.setItem("userId", data.localId);
+      localStorage.setItem("userName", data.displayName);
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
       // console.log(data);
