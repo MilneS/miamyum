@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
   const history = useHistory();
+  // const userIdState = useSelector((state) => state.userId);
   const dispatch = useDispatch();
   const data = {
     email: "",
@@ -33,10 +34,11 @@ const Login = (props) => {
     setIsLoading(false);
     if (response.ok) {
       setShowMessage(false);
-      dispatch({ type: "getUserId", locId: data.localId });
+      dispatch({ type: "getUserId", localId: data.localId });
+      localStorage.setItem("userId", data.localId);
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
-      console.log(data);
+      // console.log(data);
       return data;
     } else {
       setShowMessage(true);

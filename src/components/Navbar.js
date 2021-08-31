@@ -8,6 +8,7 @@ const Navbar = () => {
   const loggedin = useSelector((state) => state.loggedin);
   const showlogin = useSelector((state) => state.showLoginComp);
   const token= useSelector((state) => state.showLoginComp);
+  const userId= useSelector((state) => state.userId);
   const dispatch = useDispatch();
 
 
@@ -19,6 +20,8 @@ const Navbar = () => {
     dispatch({ type: "getToken", token: null });
     !token && dispatch({ type: "logout" });
     localStorage.removeItem('token')
+    dispatch({ type: "getUserId", userId: null });
+    localStorage.removeItem('userId')
   };
 
   const burgerRef = useRef(null);

@@ -20,8 +20,11 @@ const Details = () => {
     e.preventDefault();
     setNewComments(true)
     setShowComments(false)
-    
   };
+
+
+
+  
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -51,7 +54,7 @@ const Details = () => {
               )}   
               {!showComments && newComments && (
                 <div>
-                  <NewComment />
+                  <NewComment itemId={item.id}/>
                 </div>
               )}
 

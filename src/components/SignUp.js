@@ -38,7 +38,7 @@ const SignUp = (props) => {
     const data = await response.json();
     setIsLoading(false);
     if (response.ok) {
-      dispatch({ type: "getUserId", locId: data.localId });
+      dispatch({ type: "getUserId", localId: data.localId });
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
       console.log(data);
