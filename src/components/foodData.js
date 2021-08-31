@@ -67,7 +67,7 @@ const foodData = [
     title: "Paris-Brest",
     img: G,
     description:
-      "The wheel shaped pastry, was created to commemorate the Paris–Brest–Paris bicycle race. It is made with choux dough, praliné cream and topped with almond and sugar",
+      "The wheel shaped pastry, was created to commemorate the Paris–Brest–Paris bicycle race. It is made with choux dough, praliné cream and topped with almond and sugar.",
   },
   {
     id: "h",

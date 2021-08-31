@@ -23,7 +23,7 @@
   margin-right: 10px;
   /* border: 1px solid purple; */
 }
-.img{
+.img {
   height: 100%;
   width: 100%;
   border: 8px solid rgba(255, 255, 255, 0.589);
@@ -46,9 +46,9 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  height: 100px;
+  height: 70px;
   width: 360px;
-  padding: 20px;
+  padding: 0px;
   padding-top: 0px;
   font-size: 35px;
 }
@@ -56,9 +56,42 @@
   height: 350px;
   width: 360px;
   /* border: 1px solid green; */
-  padding: 20px;
+  padding: 0px;
   font-size: 20px;
   line-height: 30px;
+}
+.commentsContainer > p {
+  margin: 0px;
+  margin-top: 10px;
+  padding: 0px;
+  border: 1px solid green;
+  font-weight: 500;
+}
+.buttonsContainer{
+  display: flex;
+  flex-direction: row;
+}
+.commButton, .addButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 40px;
+  font-size: 15px;
+  padding: 5px;
+  margin: 0px;
+  margin-top: 15px;
+  background-color: white;
+  border: 1px solid rgba(139, 69, 105, 0.486);
+  color: rgb(139, 69, 105);
+  font-weight: bold;
+  border-radius: 3%;
+}
+.commButton:hover, .addButton:hover {
+  border: 4px solid rgba(139, 69, 105, 0.486);
+}
+.addButton{
+  margin-left: 20px
 }
 
 @media only screen and (max-width: 768px) {
@@ -80,13 +113,12 @@
     margin-top: 15px;
     /* border:1px solid red */
   }
-  .img{
+  .img {
     height: 100%;
     width: 100%;
     border: 3px solid rgba(255, 255, 255, 0.678);
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
-
   }
   .itemsContainer {
     height: 85px;
@@ -96,7 +128,6 @@
     margin-bottom: 15px;
     overflow: scroll;
     /* border:1px solid red */
-
   }
   .title {
     height: 10px;
@@ -106,7 +137,7 @@
     /* border:1px solid red */
   }
   .descr {
-    height:90px;
+    height: 90px;
     width: 370px;
     padding: 10px;
     font-size: 13px;
@@ -131,7 +162,7 @@
     height: 50px;
     width: 230px;
     padding-bottom: 0px;
-    padding-top:0px;
+    padding-top: 0px;
     margin-top: 0px;
   }
   .descr {

@@ -1,0 +1,20 @@
+.commentContainer {
+  border: 1px solid red;
+  height: 200px;
+  width: 350px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 17px;
+  overflow: scroll;
+}
+.comment {
+  border: 1px solid green;
+  height: fit-content;
+  max-height: 80px;
+  margin: 0px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 3px;
+  overflow: scroll;
+}
