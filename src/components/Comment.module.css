@@ -8,10 +8,14 @@
   font-size: 17px;
   overflow: scroll;
 }
+.noComment {
+  margin-top: 20px;
+}
 .commItem {
-  margin:5px;
+  margin-top: 5px;
+  margin-top: 5px;
   padding: 10px;
-  background-color: pink;
+  background-color: rgba(218, 169, 192, 0.233);
 }
 .user {
   margin-top: 0px;

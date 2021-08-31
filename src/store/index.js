@@ -6,6 +6,8 @@ const initialState = {
   showSignupComp: false,
   idToken: localStorage.getItem("token"),
   userId: localStorage.getItem("userId"),
+  showAddComments: false,
+  showComments: false,
 };
 const loginReducer = (state = initialState, action) => {
   if (action.type === "login") {
@@ -29,6 +31,16 @@ const loginReducer = (state = initialState, action) => {
   if (action.type === "getUserId") {
     return { ...state, userId: action.localId };
   }
+  if (action.type === "showAddComm") {
+    return { ...state, showAddComments: true, showComments: false };
+  }
+  if (action.type === "showComm") {
+    return { ...state, showAddComments: false, showComments: true };
+  }
+  if (action.type === "closeComm") {
+    return { ...state, showComments: false, showAddComments: false };
+  }
+
   return state;
 };
 

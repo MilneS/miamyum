@@ -4,39 +4,40 @@ import foodData from "../components/foodData";
 import Comment from "../components/Comment";
 import { useState } from "react";
 import NewComment from "../components/NewComment";
-// import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Details = () => {
-  const [showComments, setShowComments] = useState(false);
-  const [newComments, setNewComments] = useState(false);
+  const dispatch = useDispatch();
+  const showComments = useSelector((state) => state.showComments);
+  const newComments = useSelector((state) => state.showAddComments);
+
+  // const [showComments, setShowComments] = useState(false);
+  // const [newComments, setNewComments] = useState(false);
   const [allComments, setAllComments] = useState();
   const params = useParams();
   const item = foodData.find((item) => item.id === params.itemId);
 
   const showCommentsHandler = async (e) => {
     e.preventDefault();
-    setShowComments(!showComments);
-    setNewComments(false);
+    dispatch({ type: "showComm" });
     const response = await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
       method: "GET",
     });
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       setAllComments(data);
     }
+  };
+  const closeCommentsHandler = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "closeComm" });
   };
 
   const addCommentsHandler = (e) => {
     e.preventDefault();
-    setNewComments(true);
-    setShowComments(false);
+    dispatch({ type: "showAddComm" });
   };
-
-  // useEffect(() => {
-  //   console.log(allComments);
-  // }, [allComments]);
-
+// console.log(showComments);
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -49,12 +50,23 @@ const Details = () => {
             <div>{item.description}</div>
             <div className={classes.commentsContainer}>
               <div className={classes.buttonsContainer}>
-                <button
-                  className={classes.commButton}
-                  onClick={showCommentsHandler}
-                >
-                  {!showComments && "Show comments"} {showComments && "Hide"}
-                </button>
+                {showComments && (
+                  <button
+                    className={classes.commButton}
+                    onClick={closeCommentsHandler}
+                  >
+                    Close
+                  </button>
+                )}
+                {!showComments && (
+                  <button
+                    className={classes.commButton}
+                    onClick={showCommentsHandler}
+                  >
+                    Show comments
+                  </button>
+                )}
+
                 {showComments && (
                   <button
                     className={classes.addButton}
