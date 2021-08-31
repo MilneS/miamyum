@@ -6,8 +6,8 @@ const Comment = () => {
 
   return (
     <div className={classes.commentContainer}>
-      <p className={classes.comment}>drftghjihko jhgfrftghjihkojdrftghjihko jhgfrftghjihkoj hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko jhgfrftghj ihkojhgfrftgh jihkojhgfr ftghjihkojhgf</p>
-      <p className={classes.comment}>drftghjihko jhgfrftghjihkojdrftghjihko jhgfrftghjihkoj hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko jhgfrftghj ihkojhgfrftgh jihkojhgfr ftghjihkojhgf</p>
+      <p className={classes.comment}> 1 jhgfrftghjihkoj hgfrftghjihko hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko jhgfrftghj ihkojhgfrftgh jihkojhgfr ftghjihkojhgf</p>
+      <p className={classes.comment}>2 jhgfrftghjihkoj hgfrftghjihko hgfrftghjihkodrftghjihko jhgfrftghjihkoj hgfrftghjihko jhgfrftghj ihkojhgfrftgh jihkojhgfr ftghjihkojhgf</p>
     </div>
   );
 };
