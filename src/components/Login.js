@@ -1,5 +1,5 @@
 import classes from "./Login.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
@@ -33,9 +33,10 @@ const Login = (props) => {
     setIsLoading(false);
     if (response.ok) {
       setShowMessage(false);
+      dispatch({ type: "getUserId", locId: data.localId });
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
-      console.log(data)
+      console.log(data);
       return data;
     } else {
       setShowMessage(true);

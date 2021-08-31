@@ -5,6 +5,7 @@ const initialState = {
   showLoginComp: false,
   showSignupComp: false,
   idToken: localStorage.getItem("token"),
+  userId: "",
 };
 const loginReducer = (state = initialState, action) => {
   if (action.type === "login") {
@@ -24,6 +25,9 @@ const loginReducer = (state = initialState, action) => {
   }
   if (action.type === "close") {
     return { ...state, showLoginComp: false, showSignupComp: false };
+  }
+  if (action.type === "getUserId") {
+    return { ...state, userId: action.locId };
   }
   return state;
 };

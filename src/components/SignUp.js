@@ -3,9 +3,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-
 const SignUp = (props) => {
-  const history=useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const data = {
     username: "",
@@ -21,8 +20,11 @@ const SignUp = (props) => {
     setEnterredData({ ...enterredData, [e.target.id]: e.target.value });
   };
 
-
-  const sendData = async ( enterredUsername,enterredEmail,enterredPassword) => {
+  const sendData = async (
+    enterredUsername,
+    enterredEmail,
+    enterredPassword
+  ) => {
     const response = await fetch(process.env.REACT_APP_SIGNUP_API, {
       method: "POST",
       body: JSON.stringify({
@@ -36,8 +38,10 @@ const SignUp = (props) => {
     const data = await response.json();
     setIsLoading(false);
     if (response.ok) {
+      dispatch({ type: "getUserId", locId: data.localId });
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
+      console.log(data);
       return data;
     } else {
       setShowMessage(true);
@@ -55,12 +59,12 @@ const SignUp = (props) => {
     const enterredEmail = enterredData.email;
     const enterredPassword = enterredData.password;
     setIsLoading(true);
-    
+
     sendData(enterredUsername, enterredEmail, enterredPassword)
       .then((data) => {
-        dispatch({type:"idToken", token:data.idToken});
+        dispatch({ type: "idToken", token: data.idToken });
         localStorage.setItem("token", data.idToken);
-        history.replace('/')
+        history.replace("/");
       })
       .catch((err) => console.log(err.message));
   };
