@@ -3,15 +3,24 @@ import { useParams } from "react-router";
 import foodData from "../components/foodData";
 import Comment from "../components/Comment";
 import { useState } from "react";
+import NewComment from '../components/NewComment'
 
 const Details = () => {
   const [showComments, setShowComments] = useState(false);
+  const [newComments, setNewComments] = useState(false);
   const params = useParams();
   const item = foodData.find((item) => item.id === params.itemId);
 
-  const commentsHandler = (e) => {
+  const showCommentsHandler = (e) => {
     e.preventDefault();
     setShowComments(!showComments);
+    setNewComments(false)
+  };
+  const addCommentsHandler = (e) => {
+    e.preventDefault();
+    setNewComments(true)
+    setShowComments(false)
+    
   };
   return (
     <div className={classes.container}>
@@ -27,19 +36,25 @@ const Details = () => {
               <div className={classes.buttonsContainer}>
                 <button
                   className={classes.commButton}
-                  onClick={commentsHandler}
+                  onClick={showCommentsHandler}
                 >
                   {!showComments && "Show comments"} {showComments && "Hide"}
                 </button>
                 {showComments && (
-                  <button className={classes.addButton}>Add</button>
+                  <button className={classes.addButton} onClick={addCommentsHandler}>Add</button>
                 )}
               </div>
-              {showComments && (
+              {showComments && !newComments && (
                 <div>
                   <Comment />
                 </div>
+              )}   
+              {!showComments && newComments && (
+                <div>
+                  <NewComment />
+                </div>
               )}
+
             </div>
           </div>
         </div>
