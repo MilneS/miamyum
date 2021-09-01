@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import getALlComments from '../utilities/getAllCommentAPI'
 
 const initialState = {
   loggedin: !!localStorage.getItem("token"),
@@ -8,7 +9,10 @@ const initialState = {
   userId: localStorage.getItem("userId"),
   showAddComments: false,
   showComments: false,
+  allComments: {},
 };
+
+
 const loginReducer = (state = initialState, action) => {
   if (action.type === "login") {
     return { ...state, loggedin: true };
@@ -39,6 +43,9 @@ const loginReducer = (state = initialState, action) => {
   }
   if (action.type === "closeComm") {
     return { ...state, showComments: false, showAddComments: false };
+  }
+  if (action.type === "setComments") {
+    return { ...state, allComments: action.payload };
   }
 
   return state;

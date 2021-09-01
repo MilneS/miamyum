@@ -1,28 +1,32 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import classes from "./Comment.module.css";
 
 const Comment = (props) => {
-  const allComments = props.allComments;
+  const allComments = useSelector((state) => state.allComments);
+  const [filteredComments, setFilteredComments] = useState();
   const itemId = props.itemId;
-  const newArr = [];
-  const commArr = [];
 
-  useEffect(()=>{
-
-        for (const items in allComments) {
-      newArr.push(allComments[items]);
+  useEffect(() => {
+    console.log(`àll coms updated`, allComments)
+    if (allComments && !!Object.keys(allComments).length) {
+      filterComments();
     }
-    const filteredData = newArr.filter((item) => item.itemId === itemId);
-    for (let i = 0; i < filteredData.length; i++) {
-      let currData = filteredData[i];
-      commArr.push(currData);
-    }    console.log(allComments);
-  },[allComments])
+  }, [allComments]);
 
-  
+  const filterComments = () => {
+    let comments = [];
+    for (const key in allComments) {
+      let comment = allComments[key];
+      if (comment.itemId === itemId) {
+        comments.push(comment);
+      }
+    }
+    setFilteredComments(comments);
+  };
 
   const displayComm = () => {
-    return commArr.map((item, index) => {
+    return filteredComments.map((item, index) => {
       return (
         <div key={index} className={classes.commItem}>
           <div className={classes.user}>{item.userName}</div>
@@ -34,7 +38,7 @@ const Comment = (props) => {
 
   return (
     <div className={classes.commentContainer}>
-      {commArr.length > 0 ? (
+      {filteredComments && filteredComments.length > 0 ? (
         displayComm()
       ) : (
         <div className={classes.noComment}>No comments.</div>

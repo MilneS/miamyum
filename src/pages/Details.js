@@ -2,31 +2,25 @@ import classes from "./Details.module.css";
 import { useParams } from "react-router";
 import foodData from "../components/foodData";
 import Comment from "../components/Comment";
-import { useState } from "react";
 import NewComment from "../components/NewComment";
 import { useDispatch, useSelector } from "react-redux";
+import getAllComments from "../utilities/getAllCommentAPI";
 
 const Details = () => {
   const dispatch = useDispatch();
   const showComments = useSelector((state) => state.showComments);
   const newComments = useSelector((state) => state.showAddComments);
 
-  // const [showComments, setShowComments] = useState(false);
-  // const [newComments, setNewComments] = useState(false);
-  const [allComments, setAllComments] = useState();
   const params = useParams();
   const item = foodData.find((item) => item.id === params.itemId);
 
   const showCommentsHandler = async (e) => {
     e.preventDefault();
     dispatch({ type: "showComm" });
-    const response = await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
-      method: "GET",
-    });
-    if (response.ok) {
-      const data = await response.json();
-      setAllComments(data);
-    }
+    getAllComments().then(data => {
+      dispatch({ type: "setComments", payload: data });
+
+    })
   };
   const closeCommentsHandler = async (e) => {
     e.preventDefault();
@@ -36,8 +30,8 @@ const Details = () => {
   const addCommentsHandler = (e) => {
     e.preventDefault();
     dispatch({ type: "showAddComm" });
+
   };
-// console.log(showComments);
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -78,7 +72,7 @@ const Details = () => {
               </div>
               {showComments && !newComments && (
                 <div>
-                  <Comment allComments={allComments} itemId={item.id} />
+                  <Comment itemId={item.id} />
                 </div>
               )}
               {!showComments && newComments && (

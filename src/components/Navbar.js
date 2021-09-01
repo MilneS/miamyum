@@ -8,7 +8,6 @@ const Navbar = () => {
   const loggedin = useSelector((state) => state.loggedin);
   const showlogin = useSelector((state) => state.showLoginComp);
   const token= useSelector((state) => state.showLoginComp);
-  const userId= useSelector((state) => state.userId);
   const dispatch = useDispatch();
 
 

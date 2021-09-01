@@ -1,6 +1,7 @@
 import classes from "./NewComment.module.css";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import getAllComments from "../utilities/getAllCommentAPI";
 
 const NewComment = (props) => {
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ const NewComment = (props) => {
         comment: comment,
       }),
     });
+    getAllComments().then(data => {
+      dispatch({ type: "setComments", payload: data });
+    })
     dispatch({ type: "showComm" });
   };
 
