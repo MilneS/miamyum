@@ -8,6 +8,7 @@ const initialState = {
   userId: localStorage.getItem("userId"),
   showAddComments: false,
   showComments: false,
+  allComments: []
 };
 const loginReducer = (state = initialState, action) => {
   if (action.type === "login") {
@@ -39,6 +40,9 @@ const loginReducer = (state = initialState, action) => {
   }
   if (action.type === "closeComm") {
     return { ...state, showComments: false, showAddComments: false };
+  }
+  if (action.type === "Set_Comments") {
+    return { ...state, allComments: action.payload };
   }
 
   return state;

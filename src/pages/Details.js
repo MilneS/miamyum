@@ -13,19 +13,19 @@ const Details = () => {
 
   // const [showComments, setShowComments] = useState(false);
   // const [newComments, setNewComments] = useState(false);
-  const [allComments, setAllComments] = useState();
   const params = useParams();
   const item = foodData.find((item) => item.id === params.itemId);
 
   const showCommentsHandler = async (e) => {
     e.preventDefault();
-    dispatch({ type: "showComm" });
     const response = await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
       method: "GET",
     });
     if (response.ok) {
       const data = await response.json();
-      setAllComments(data);
+      // when the data arrives, adds the data to the state
+      dispatch({ type: "Set_Comments", payload: data })
+      dispatch({ type: "showComm" });
     }
   };
   const closeCommentsHandler = async (e) => {
@@ -37,7 +37,6 @@ const Details = () => {
     e.preventDefault();
     dispatch({ type: "showAddComm" });
   };
-// console.log(showComments);
   return (
     <div className={classes.container}>
       <div className={classes.card}>
@@ -78,7 +77,7 @@ const Details = () => {
               </div>
               {showComments && !newComments && (
                 <div>
-                  <Comment allComments={allComments} itemId={item.id} />
+                  <Comment itemId={item.id} />
                 </div>
               )}
               {!showComments && newComments && (
