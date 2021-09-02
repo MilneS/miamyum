@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/miamyum/static/css/main.86daed45.chunk.css",
-    "main.js": "/miamyum/static/js/main.d05b6d05.chunk.js",
-    "main.js.map": "/miamyum/static/js/main.d05b6d05.chunk.js.map",
+    "main.js": "/miamyum/static/js/main.b03a0014.chunk.js",
+    "main.js.map": "/miamyum/static/js/main.b03a0014.chunk.js.map",
     "runtime-main.js": "/miamyum/static/js/runtime-main.99f72e3c.js",
     "runtime-main.js.map": "/miamyum/static/js/runtime-main.99f72e3c.js.map",
-    "static/js/2.d71fbc9c.chunk.js": "/miamyum/static/js/2.d71fbc9c.chunk.js",
-    "static/js/2.d71fbc9c.chunk.js.map": "/miamyum/static/js/2.d71fbc9c.chunk.js.map",
+    "static/js/2.53eac375.chunk.js": "/miamyum/static/js/2.53eac375.chunk.js",
+    "static/js/2.53eac375.chunk.js.map": "/miamyum/static/js/2.53eac375.chunk.js.map",
     "static/js/3.7cd541c8.chunk.js": "/miamyum/static/js/3.7cd541c8.chunk.js",
     "static/js/3.7cd541c8.chunk.js.map": "/miamyum/static/js/3.7cd541c8.chunk.js.map",
     "index.html": "/miamyum/index.html",
     "static/css/main.86daed45.chunk.css.map": "/miamyum/static/css/main.86daed45.chunk.css.map",
-    "static/js/2.d71fbc9c.chunk.js.LICENSE.txt": "/miamyum/static/js/2.d71fbc9c.chunk.js.LICENSE.txt",
+    "static/js/2.53eac375.chunk.js.LICENSE.txt": "/miamyum/static/js/2.53eac375.chunk.js.LICENSE.txt",
     "static/media/App.css": "/miamyum/static/media/1.a8e73c8e.jpeg",
     "static/media/a.b6330cc6.jpg": "/miamyum/static/media/a.b6330cc6.jpg",
     "static/media/b.bbf1d9a5.jpg": "/miamyum/static/media/b.bbf1d9a5.jpg",
@@ -39,8 +39,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.99f72e3c.js",
-    "static/js/2.d71fbc9c.chunk.js",
+    "static/js/2.53eac375.chunk.js",
     "static/css/main.86daed45.chunk.css",
-    "static/js/main.d05b6d05.chunk.js"
+    "static/js/main.b03a0014.chunk.js"
   ]
 }
