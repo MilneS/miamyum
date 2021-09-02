@@ -47,7 +47,6 @@ textarea {
     font-size: 13px;
     padding: 5px;
     line-height: 18px;
-    border: 1px solid green;
   }
   ::placeholder {
     font-size: 13px;
@@ -56,5 +55,23 @@ textarea {
     width: 60px;
     height: 30px;
     font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  textarea {
+    width: 215px;
+    height: 60px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  ::placeholder {
+    font-size: 13px;
+  }
+  .comment {
+    height: 80px;
+    margin: 0px;
+    margin-top: 18px;
+    padding: 0px;
   }
 }

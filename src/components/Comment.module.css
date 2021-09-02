@@ -42,3 +42,14 @@
     margin-top: 10px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .commentContainer {
+    height: fit-content;
+    width: 215px;
+    line-height: 13px;
+    font-size: 10px;  
+  }
+  .noComment {
+    margin-top: 5px;
+  }
+}
