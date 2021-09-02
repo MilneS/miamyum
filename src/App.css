@@ -9,7 +9,7 @@ body {
       rgba(255, 255, 255, 0.236),
       rgba(250, 195, 222, 0.636)
     ),
-    url("./1.jpeg");
+    url("./utilities/wallpaper.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: rgb(236,212,226);

@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
-import All from "./pages/All";
+import AllPhotos from "./pages/AllPhotos";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import { HashRouter,Route, Switch, Redirect } from "react-router-dom";
@@ -43,8 +43,8 @@ function App() {
         <Route path="/miamyum" exact>
           <Home />
         </Route>
-        <Route path="/miamyum/all">
-          {loggedin && <All />}
+        <Route path="/miamyum/allphotos">
+          {loggedin && <AllPhotos />}
           {!loggedin && <Redirect to="/"/>}
         </Route>
         <Route path="/miamyum/details/:itemId">

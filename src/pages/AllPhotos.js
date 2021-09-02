@@ -1,6 +1,6 @@
 import classes from "./All.module.css";
 import AllCard from "../components/AllCard";
-import foodData from "../components/foodData";
+import foodData from "../utilities/foodData";
 import { Link } from "react-router-dom";
 
 const All = () => {

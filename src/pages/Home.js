@@ -1,5 +1,5 @@
 import classes from "./Home.module.css";
-import foodData from "../components/foodData";
+import foodData from "../utilities/foodData";
 
 
 const Home = () => {

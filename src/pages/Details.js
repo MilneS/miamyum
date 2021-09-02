@@ -1,6 +1,6 @@
 import classes from "./Details.module.css";
 import { useParams } from "react-router";
-import foodData from "../components/foodData";
+import foodData from "../utilities/foodData";
 import Comment from "../components/Comment";
 import NewComment from "../components/NewComment";
 import { useDispatch, useSelector } from "react-redux";

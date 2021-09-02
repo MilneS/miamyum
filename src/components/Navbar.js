@@ -115,9 +115,9 @@ const Navbar = () => {
         {loggedin && (
           <NavLink
             activeClassName={`${!showlogin && classes.active}`}
-            to="/miamyum/all" onClick={NavHandler}
+            to="/miamyum/allphotos" onClick={NavHandler}
           >
-            All pics
+            All photos
           </NavLink>
         )}
       </div>
