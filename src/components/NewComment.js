@@ -11,25 +11,31 @@ const NewComment = (props) => {
     comment: "",
   };
   const [enterredData, setEnterredData] = useState(data);
+  const [showErr, setShowErr] = useState(false);
   const itemId = props.itemId;
   const comment = enterredData.comment;
   const userName = localStorage.getItem("userName");
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
-      method: "POST",
-      body: JSON.stringify({
-        itemId: itemId,
-        userName: userName,
-        userId: userId,
-        comment: comment,
-      }),
-    });
-    getAllComments().then(data => {
-      dispatch({ type: "setComments", payload: data });
-    })
-    dispatch({ type: "showComm" });
+    if (comment.length > 0 && comment.length < 145) {
+      setShowErr(false);
+      await fetch(process.env.REACT_APP_ADD_COMMENTS_API, {
+        method: "POST",
+        body: JSON.stringify({
+          itemId: itemId,
+          userName: userName,
+          userId: userId,
+          comment: comment,
+        }),
+      });
+      getAllComments().then((data) => {
+        dispatch({ type: "setComments", payload: data });
+      });
+      dispatch({ type: "showComm" });
+    } else {
+      setShowErr(true);
+    }
   };
 
   const enterredDataHandler = (e) => {
@@ -39,6 +45,7 @@ const NewComment = (props) => {
   return (
     <div className={classes.comment}>
       <form onSubmit={submitHandler}>
+      {showErr && <div className={classes.errMsg}>Your comment is too long</div>}
         <label />
         <textarea
           onChange={enterredDataHandler}

@@ -167,6 +167,9 @@
     width: 300px;
     height: 550px;
   }
+.addButton:hover {
+  border: 2px solid rgba(139, 69, 105, 0.582);
+}
   .imgcontainer {
     height: 250px;
     width: 270px;
@@ -177,7 +180,6 @@
     width: 255px;
     padding-top: 10px;
     /* border:1px solid red */
-
   }
   .title {
     height: 50px;
