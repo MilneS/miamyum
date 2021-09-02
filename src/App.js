@@ -32,7 +32,7 @@ function App() {
   }, [showLogin, showSignup, dispatch]);
 
   return (
-    <HashRouter basename='/miamyum'>
+    <HashRouter basename='/'>
     <div className="App">
       <Navbar />
       <div id="cont" ref={ref}>
