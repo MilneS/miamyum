@@ -13,7 +13,6 @@
 }
 .commItem {
   margin-top: 5px;
-  margin-top: 5px;
   padding: 10px;
   background-color: rgba(218, 169, 192, 0.233);
 }
@@ -33,13 +32,20 @@
 
 @media only screen and (max-width: 768px) {
   .commentContainer {
-    height: fit-content;
-    width: 300px;
-    line-height: 15px;
-    font-size: 13px;  
+    width: 300px; 
+    max-height: 100px;
+    margin-top: 3px;
+    padding-bottom: 5px;
   }
   .noComment {
     margin-top: 10px;
+  }
+  .commItem {
+    margin-top: 3px;
+    padding: 5px;
+  }
+  .comment {
+    margin-top: 3px;
   }
 }
 @media only screen and (max-width: 480px) {

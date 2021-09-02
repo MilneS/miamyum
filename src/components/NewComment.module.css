@@ -1,13 +1,8 @@
-.comment {
-  height: 80px;
-  margin: 0px;
-  margin-top: 18px;
-  padding: 3px;
-}
 textarea {
   width: 300px;
   height: 130px;
   padding: 10px;
+  margin-top: 10px;
   font-size: 15px;
   outline: unset;
   border: 2px solid rgba(139, 69, 105, 0.582);
@@ -47,6 +42,7 @@ textarea {
     font-size: 13px;
     padding: 5px;
     line-height: 18px;
+    margin-top: 5px;
   }
   ::placeholder {
     font-size: 13px;
@@ -67,11 +63,5 @@ textarea {
   }
   ::placeholder {
     font-size: 13px;
-  }
-  .comment {
-    height: 80px;
-    margin: 0px;
-    margin-top: 18px;
-    padding: 0px;
   }
 }
