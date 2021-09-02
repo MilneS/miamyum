@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/miamyum/static/css/main.11fe279e.chunk.css",
-    "main.js": "/miamyum/static/js/main.c9ad8d93.chunk.js",
-    "main.js.map": "/miamyum/static/js/main.c9ad8d93.chunk.js.map",
+    "main.css": "/miamyum/static/css/main.cfc7c63a.chunk.css",
+    "main.js": "/miamyum/static/js/main.ab8cadef.chunk.js",
+    "main.js.map": "/miamyum/static/js/main.ab8cadef.chunk.js.map",
     "runtime-main.js": "/miamyum/static/js/runtime-main.99f72e3c.js",
     "runtime-main.js.map": "/miamyum/static/js/runtime-main.99f72e3c.js.map",
     "static/js/2.53eac375.chunk.js": "/miamyum/static/js/2.53eac375.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.7cd541c8.chunk.js": "/miamyum/static/js/3.7cd541c8.chunk.js",
     "static/js/3.7cd541c8.chunk.js.map": "/miamyum/static/js/3.7cd541c8.chunk.js.map",
     "index.html": "/miamyum/index.html",
-    "static/css/main.11fe279e.chunk.css.map": "/miamyum/static/css/main.11fe279e.chunk.css.map",
+    "static/css/main.cfc7c63a.chunk.css.map": "/miamyum/static/css/main.cfc7c63a.chunk.css.map",
     "static/js/2.53eac375.chunk.js.LICENSE.txt": "/miamyum/static/js/2.53eac375.chunk.js.LICENSE.txt",
     "static/media/a.b6330cc6.jpg": "/miamyum/static/media/a.b6330cc6.jpg",
     "static/media/b.bbf1d9a5.jpg": "/miamyum/static/media/b.bbf1d9a5.jpg",
@@ -40,7 +40,7 @@
   "entrypoints": [
     "static/js/runtime-main.99f72e3c.js",
     "static/js/2.53eac375.chunk.js",
-    "static/css/main.11fe279e.chunk.css",
-    "static/js/main.c9ad8d93.chunk.js"
+    "static/css/main.cfc7c63a.chunk.css",
+    "static/js/main.ab8cadef.chunk.js"
   ]
 }
