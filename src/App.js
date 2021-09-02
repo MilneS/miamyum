@@ -5,7 +5,7 @@ import Details from "./pages/Details";
 import All from "./pages/All";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter,Route, Switch, Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useRef, useEffect } from "react";
 
@@ -32,6 +32,7 @@ function App() {
   }, [showLogin, showSignup, dispatch]);
 
   return (
+    <HashRouter basename='/miamyum'>
     <div className="App">
       <Navbar />
       <div id="cont" ref={ref}>
@@ -55,6 +56,7 @@ function App() {
         </Route>
       </Switch>
     </div>
+    </HashRouter>
   );
 }
 export default App;
