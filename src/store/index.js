@@ -1,5 +1,4 @@
 import { createStore } from "redux";
-import getALlComments from '../utilities/getAllCommentAPI'
 
 const initialState = {
   loggedin: !!localStorage.getItem("token"),

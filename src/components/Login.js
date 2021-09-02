@@ -39,7 +39,6 @@ const Login = (props) => {
       localStorage.setItem("userName", data.displayName);
       !!data.idToken && dispatch({ type: "login" });
       dispatch({ type: "close" });
-      // console.log(data);
       return data;
     } else {
       setShowMessage(true);

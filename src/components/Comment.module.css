@@ -30,3 +30,15 @@
   margin-top: 5px;
   overflow: scroll;
 }
+
+@media only screen and (max-width: 768px) {
+  .commentContainer {
+    height: fit-content;
+    width: 300px;
+    line-height: 15px;
+    font-size: 13px;  
+  }
+  .noComment {
+    margin-top: 10px;
+  }
+}

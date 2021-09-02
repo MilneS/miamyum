@@ -8,7 +8,6 @@ const Comment = (props) => {
   const itemId = props.itemId;
 
   useEffect(() => {
-    console.log(`àll coms updated`, allComments)
     if (allComments && !!Object.keys(allComments).length) {
       filterComments();
     }

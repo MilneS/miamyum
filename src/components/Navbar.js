@@ -16,6 +16,7 @@ const Navbar = () => {
   };
 
   const logoutHandler = () => {
+    dispatch({ type: "closeComm"});
     dispatch({ type: "getToken", token: null });
     !token && dispatch({ type: "logout" });
     localStorage.removeItem('token')
@@ -45,6 +46,10 @@ const Navbar = () => {
     setShowBurgerLinks(!showBurgerLinks);
   };
 
+
+  const NavHandler=()=>{
+    dispatch({ type: "closeComm"});
+  }
   return (
     <div className={classes.navContainer}>
       {/* ------BURGER------ */}
@@ -64,7 +69,7 @@ const Navbar = () => {
             <div onClick={burgerHandler} className={classes.navLinks}>
               <NavLink
                 activeClassName={`${!showlogin && classes.active}`}
-                to="/miamyum"
+                to="/miamyum" onClick={NavHandler}
               >
                 Home
               </NavLink>
@@ -77,7 +82,7 @@ const Navbar = () => {
               >
                 <NavLink
                   activeClassName={`${!showlogin && classes.active}`}
-                  to="/miamyum/all"
+                  to="/miamyum/all" onClick={NavHandler}
                 >
                   All pics
                 </NavLink>
@@ -104,13 +109,13 @@ const Navbar = () => {
 
       {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
-        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/miamyum">
+        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/miamyum" onClick={NavHandler}>
           Home
         </NavLink>
         {loggedin && (
           <NavLink
             activeClassName={`${!showlogin && classes.active}`}
-            to="/miamyum/all"
+            to="/miamyum/all" onClick={NavHandler}
           >
             All pics
           </NavLink>
