@@ -17,10 +17,9 @@ const Details = () => {
   const showCommentsHandler = async (e) => {
     e.preventDefault();
     dispatch({ type: "showComm" });
-    getAllComments().then(data => {
+    getAllComments().then((data) => {
       dispatch({ type: "setComments", payload: data });
-
-    })
+    });
   };
   const closeCommentsHandler = async (e) => {
     e.preventDefault();
@@ -30,7 +29,6 @@ const Details = () => {
   const addCommentsHandler = (e) => {
     e.preventDefault();
     dispatch({ type: "showAddComm" });
-
   };
   return (
     <div className={classes.container}>
@@ -60,15 +58,12 @@ const Details = () => {
                     Show comments
                   </button>
                 )}
-
-                {showComments && (
-                  <button
-                    className={classes.addButton}
-                    onClick={addCommentsHandler}
-                  >
-                    Add
-                  </button>
-                )}
+                <button
+                  className={classes.addButton}
+                  onClick={addCommentsHandler}
+                >
+                  Add
+                </button>
               </div>
               {showComments && !newComments && (
                 <div>
