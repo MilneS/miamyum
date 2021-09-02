@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/miamyum/static/css/main.86daed45.chunk.css",
-    "main.js": "/miamyum/static/js/main.b03a0014.chunk.js",
-    "main.js.map": "/miamyum/static/js/main.b03a0014.chunk.js.map",
+    "main.js": "/miamyum/static/js/main.4d6b5e4c.chunk.js",
+    "main.js.map": "/miamyum/static/js/main.4d6b5e4c.chunk.js.map",
     "runtime-main.js": "/miamyum/static/js/runtime-main.99f72e3c.js",
     "runtime-main.js.map": "/miamyum/static/js/runtime-main.99f72e3c.js.map",
     "static/js/2.53eac375.chunk.js": "/miamyum/static/js/2.53eac375.chunk.js",
@@ -41,6 +41,6 @@
     "static/js/runtime-main.99f72e3c.js",
     "static/js/2.53eac375.chunk.js",
     "static/css/main.86daed45.chunk.css",
-    "static/js/main.b03a0014.chunk.js"
+    "static/js/main.4d6b5e4c.chunk.js"
   ]
 }
