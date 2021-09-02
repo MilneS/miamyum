@@ -1,4 +1,4 @@
-import classes from "./All.module.css";
+import classes from "./AllPhotos.module.css";
 import AllCard from "../components/AllCard";
 import foodData from "../utilities/foodData";
 import { Link } from "react-router-dom";
