@@ -40,19 +40,19 @@ function App() {
         {showSignup && <SignUp />}
       </div>
       <Switch>
-        <Route path="/miamyum" exact>
+        <Route path="/photogallery" exact>
           <Home />
         </Route>
-        <Route path="/miamyum/allphotos">
+        <Route path="/photogallery/allphotos">
           {loggedin && <AllPhotos />}
           {!loggedin && <Redirect to="/"/>}
         </Route>
-        <Route path="/miamyum/details/:itemId">
+        <Route path="/photogallery/details/:itemId">
           {loggedin && <Details />}
           {!loggedin && <Redirect to="/" />}
         </Route>
         <Route path="*">
-        <Redirect to="/miamyum"/>
+        <Redirect to="/photogallery"/>
         </Route>
       </Switch>
     </div>
