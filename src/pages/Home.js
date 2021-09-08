@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className={classes.container}>
       <p className={classes.title}>
-        Welcome to Miamyum's <br />
+        Welcome to my <br />
         photo gallery
       </p>
       <div className={classes.card}>
