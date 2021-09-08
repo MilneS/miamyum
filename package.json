@@ -1,6 +1,6 @@
 {
-  "homepage": "https://milnes.github.io/miamyum",
-  "name": "miamyum",
+  "homepage": "https://milnes.github.io/photogallery",
+  "name": "photogallery",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
