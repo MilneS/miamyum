@@ -45,11 +45,11 @@ function App() {
         </Route>
         <Route path="/photogallery/allphotos">
           {loggedin && <AllPhotos />}
-          {!loggedin && <Redirect to="/"/>}
+          {!loggedin && <Redirect to="/photogallery"/>}
         </Route>
         <Route path="/photogallery/details/:itemId">
           {loggedin && <Details />}
-          {!loggedin && <Redirect to="/" />}
+          {!loggedin && <Redirect to="/photogallery" />}
         </Route>
         <Route path="*">
         <Redirect to="/photogallery"/>

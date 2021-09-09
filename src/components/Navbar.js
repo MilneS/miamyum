@@ -7,22 +7,21 @@ const Navbar = () => {
   const [showBurgerLinks, setShowBurgerLinks] = useState(false);
   const loggedin = useSelector((state) => state.loggedin);
   const showlogin = useSelector((state) => state.showLoginComp);
-  const token= useSelector((state) => state.showLoginComp);
+  const token = useSelector((state) => state.showLoginComp);
   const dispatch = useDispatch();
-
 
   const showLoginHandler = () => {
     dispatch({ type: "showLogin" });
   };
 
   const logoutHandler = () => {
-    dispatch({ type: "closeComm"});
+    dispatch({ type: "closeComm" });
     dispatch({ type: "getToken", token: null });
     !token && dispatch({ type: "logout" });
-    localStorage.removeItem('token')
-    localStorage.removeItem('userName')
+    localStorage.removeItem("token");
+    localStorage.removeItem("userName");
     dispatch({ type: "getUserId", userId: null });
-    localStorage.removeItem('userId')
+    localStorage.removeItem("userId");
   };
 
   const burgerRef = useRef(null);
@@ -46,10 +45,9 @@ const Navbar = () => {
     setShowBurgerLinks(!showBurgerLinks);
   };
 
-
-  const NavHandler=()=>{
-    dispatch({ type: "closeComm"});
-  }
+  const NavHandler = () => {
+    dispatch({ type: "closeComm" });
+  };
   return (
     <div className={classes.navContainer}>
       {/* ------BURGER------ */}
@@ -68,8 +66,10 @@ const Navbar = () => {
           <nav ref={burgerRef}>
             <div onClick={burgerHandler} className={classes.navLinks}>
               <NavLink
+                exact
+                to="/photogallery"
                 activeClassName={`${!showlogin && classes.active}`}
-                to="/photogallery" onClick={NavHandler}
+                onClick={NavHandler}
               >
                 Home
               </NavLink>
@@ -80,9 +80,10 @@ const Navbar = () => {
                 onClick={burgerHandler}
                 className={`${classes.navLinks} ${classes.about}`}
               >
-                <NavLink
+                <NavLink exact
+                  to="/photogallery/allphotos"
                   activeClassName={`${!showlogin && classes.active}`}
-                  to="/photogallery/allphotos" onClick={NavHandler}
+                  onClick={NavHandler}
                 >
                   All pics
                 </NavLink>
@@ -109,13 +110,20 @@ const Navbar = () => {
 
       {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
-        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/photogallery" onClick={NavHandler}>
+        <NavLink
+          exact
+          to="/photogallery"
+          activeClassName={`${!showlogin && classes.active}`}
+          onClick={NavHandler}
+        >
           Home
         </NavLink>
         {loggedin && (
           <NavLink
+            exact
+            to="/photogallery/allphotos"
             activeClassName={`${!showlogin && classes.active}`}
-            to="/photogallery/allphotos" onClick={NavHandler}
+            onClick={NavHandler}
           >
             All photos
           </NavLink>
