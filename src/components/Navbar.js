@@ -69,7 +69,7 @@ const Navbar = () => {
             <div onClick={burgerHandler} className={classes.navLinks}>
               <NavLink
                 activeClassName={`${!showlogin && classes.active}`}
-                to="/miamyum" onClick={NavHandler}
+                to="/photogallery" onClick={NavHandler}
               >
                 Home
               </NavLink>
@@ -82,7 +82,7 @@ const Navbar = () => {
               >
                 <NavLink
                   activeClassName={`${!showlogin && classes.active}`}
-                  to="/miamyum/all" onClick={NavHandler}
+                  to="/photogallery/allphotos" onClick={NavHandler}
                 >
                   All pics
                 </NavLink>
@@ -109,13 +109,13 @@ const Navbar = () => {
 
       {/* ------NAV----- */}
       <div className={classes.liContainerLeft}>
-        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/miamyum" onClick={NavHandler}>
+        <NavLink activeClassName={`${!showlogin && classes.active}`} to="/photogallery" onClick={NavHandler}>
           Home
         </NavLink>
         {loggedin && (
           <NavLink
             activeClassName={`${!showlogin && classes.active}`}
-            to="/miamyum/allphotos" onClick={NavHandler}
+            to="/photogallery/allphotos" onClick={NavHandler}
           >
             All photos
           </NavLink>

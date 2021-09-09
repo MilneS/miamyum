@@ -10,7 +10,7 @@ const All = () => {
         <div className={classes.cardsContainer}>
           {foodData.map((item, index) => {
             return (
-              <Link to={`/miamyum/details/${item.id}`} key={index}>
+              <Link to={`/photogallery/details/${item.id}`} key={index}>
               <AllCard
                 link={item.img}
                 item={item}
