@@ -22,6 +22,7 @@ const Navbar = () => {
     localStorage.removeItem("userName");
     dispatch({ type: "getUserId", userId: null });
     localStorage.removeItem("userId");
+    localStorage.removeItem("email");
   };
 
   const burgerRef = useRef(null);
